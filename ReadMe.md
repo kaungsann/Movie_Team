@@ -1,6 +1,6 @@
 clone the project repo and run the following command to start
 
-install command => npm install || npm install --force
+install command => npm install || npm install --force &&
 run command => npm run dev
 
 contributors
