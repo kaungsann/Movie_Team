@@ -1,0 +1,41 @@
+.left-text {
+  left: 30px;
+}
+.right-text {
+  margin-left: 50px;
+}
+
+.title-text {
+  width: 200px;
+  font-size: 28px;
+  font-weight: 700;
+}
+.underline-title {
+  width: 50px !important;
+  height: 1px !important;
+  background-color: #7f7f7f70;
+}
+
+.mobile-image img {
+  max-width: 200px !important;
+  height: 300px !important;
+}
+
+@media screen and (max-width: 820px) {
+  .mobile-image {
+    width: 50vw !important;
+  }
+  .mobile-image img {
+    width: 50vw !important;
+    height: 300px !important;
+  }
+}
+@media screen and (max-width: 420px) {
+  .mobile-image {
+    width: 110vw !important;
+  }
+  .mobile-image img {
+    width: 110vw !important;
+    height: 400px !important;
+  }
+}
