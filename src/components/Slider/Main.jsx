@@ -46,7 +46,7 @@ function Main(props) {
         <Button text="<" function={prev}></Button>
         <Button text=">" function={next}></Button>
         <p>
-          ‌<a href="#">View More > </a>
+          ‌<a href="#">View More &rArr;</a>
         </p>
       </div>
     </div>
