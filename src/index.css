@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 a {
   color: white;
   opacity: 0.7;
@@ -22,8 +21,7 @@ a:hover {
 * {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-=======
+}
 .mantine-Carousel-indicator {
   background-color: rgb(35, 181, 243) !important;
-
 }
