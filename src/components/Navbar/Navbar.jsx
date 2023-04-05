@@ -26,7 +26,7 @@ const Navbar = () => {
             <h1 className="text-3xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-blue-800 via-blue-500 to-cyan-400 cursor-pointer py-3 md:py-5 ml-5">
               YTD
             </h1>
-            <div className=" gap-8 ml-20 hidden md:flex h-full">
+            <div className=" gap-8  hidden lg:flex h-full ml-20">
               <Browse />
               <Home />
               <Movies />
