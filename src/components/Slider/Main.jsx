@@ -38,15 +38,15 @@ function Main(props) {
       </div>
       <div
         style={{ display: "block" }}
-        className={
-          props.left ? styles["left-text"] : props.top ? styles["top-text"] : styles["right-text"]
-        }>
+        className={props.left ? styles["left-text"] : styles["right-text"]}>
         <div className={styles["underline-title"]}></div>
         <h3 className={styles["title-text"]}>{props.text}</h3>
         <Button text="<" function={prev}></Button>
         <Button text=">" function={next}></Button>
         <p>
-          <a href="#">View More &rArr;</a>
+          <a style={{ color: "#7f7f7f" }} href="#">
+            View More &rArr;
+          </a>
         </p>
       </div>
     </div>

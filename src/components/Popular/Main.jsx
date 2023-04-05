@@ -1,16 +1,20 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Popular from "./Popular";
+import axios from "axios";
 function Main() {
   const [images, setImages] = useState([]);
   useEffect(() => {
     const fetchImages = async () => {
-      const response = await fetch(`https://api.unsplash.com/photos?client_id=SZxA0dgilFD2Qzx-zFIXDaBSsbkBjrsfFUhfoWhRGrQ`)
-      const data = await response.json()
-      setImages(data)
-      console.log(data)
-    }
-    fetchImages()
-  }, [])
+      const response = await fetch(
+        `https://api.unsplash.com/photos?client_id=SZxA0dgilFD2Qzx-zFIXDaBSsbkBjrsfFUhfoWhRGrQ`
+      );
+      const data = await response.json();
+      setImages(data);
+      console.log(data);
+    };
+    fetchImages();
+  }, []);
+
   // const [year, setYear] = useState();
   // const [type, setType] = useState();
   // const [title, setTitle] = useState();
@@ -26,7 +30,9 @@ function Main() {
   // }, []);
   return (
     <>
-      {!images ? <h1>Loading...</h1> : 
+      {!images ? (
+        <h1>Loading...</h1>
+      ) : (
         <section>
           <h1>Recommende for your</h1>
           <div>
@@ -35,9 +41,8 @@ function Main() {
             ))}
           </div>
         </section>
-      }
+      )}
     </>
-   
   );
 }
 

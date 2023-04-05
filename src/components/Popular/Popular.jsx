@@ -12,19 +12,19 @@ function Popular() {
           </h2>
           <p className="text-gray-400">Most watched movies by days</p>
           <div>
-            <a href="" className="text-gray-400">VIEW ALL ></a>
+            <a href="" className="text-gray-400">
+              VIEW ALL &rArr;
+            </a>
           </div>
         </div>
         <div className="max-w-sm rounded px-10">
-          <img src="https://source.unsplash.com/random" alt="" className="w-full"/>
+          <img src="https://source.unsplash.com/random" alt="" className="w-full" />
           <span className="text-gray-400">2017,Action</span>
           <h3 className="text-white text-2xl">Movie Title</h3>
         </div>
-        
       </div>
     </div>
   );
 }
-
 
 export default Popular;
