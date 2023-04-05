@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
+import Hero from "../components/Hero/Hero";
 
 function Main() {
   return (
-    <div className="bg-black h-[2000vh]">
+    <div className="">
       <Navbar />
-      <button>Hi</button>
+      <Hero />
     </div>
   );
 }

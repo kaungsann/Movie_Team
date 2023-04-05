@@ -9,7 +9,7 @@ const Triangle = () => {
 
 const UserDropdown = () => {
   return (
-    <div className="md:group-hover:block hidden hover:block absolute top-[80px]  bg-white w-[160px] md:right-10 right-1 rounded-b-md py-2 ">
+    <div className="md:group-hover:block hidden hover:block absolute top-[80px]  bg-white w-[160px] md:right-10 right-1 rounded-b-md py-2 z-10 ">
       <Triangle />
       <p className="cursor-pointer px-6 py-2 font-light text-sm hover:bg-stone-200 relative z-10">
         Sign In{" "}
@@ -27,7 +27,7 @@ const MobileDropdown = ({
 }) => {
   return (
     <div
-      className={`absolute md:top-[85px] top-[65px] bg-white w-[160px] md:right-10 right-1 rounded-b-md py-2 ${
+      className={`absolute md:top-[85px] top-[65px] bg-white w-[160px] md:right-10 right-1 rounded-b-md py-2 z-10 ${
         toggleUserMobileDropdown ? "block" : "hidden"
       }`}>
       <Triangle />
@@ -60,10 +60,10 @@ const User = () => {
           alt=""
         />
         <BsChevronDown size={10} className="hidden md:block" />
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <UserDropdown />
         </div>
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <MobileDropdown
             toggleUserMobileDropdown={toggleUserMobileDropdown}
             setToggleUserMobileDropdown={setToggleUserMobileDropdown}
