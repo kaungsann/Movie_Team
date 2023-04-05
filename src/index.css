@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+  color: white;
+  opacity: 0.7;
+  cursor: pointer;
+  user-select: none;
+}
+a:hover {
+  opacity: 1;
+}
+
+/* Hide scrollbar for webkit based browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.mantine-Carousel-indicator {
+  background-color: rgb(35, 181, 243) !important;
+}
