@@ -14,7 +14,7 @@ const Navbar = () => {
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
-      <nav className=" px-2 md:px-10  font-light border-b bg-white shadow-lg">
+      <nav className=" px-2 md:px-10 2xl:px-40  font-light border-b bg-white shadow-lg">
         <ul className="flex justify-between ">
           <li className="flex items-center">
             <BiMenu

@@ -74,7 +74,7 @@ const MoviesDropdown = () => {
         </div>
         <div className="w-[33%] px-10">
           <BoldHeading>Movie Trailer</BoldHeading>
-          <div className="mt-20 ">
+          <div className="mt-20">
             <Carousel
               maw={320}
               mx="auto"
