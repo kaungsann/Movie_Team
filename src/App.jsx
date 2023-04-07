@@ -1,16 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import Footer from "./component/Footer";
-import FeaturedTV from "./component/FeaturedTV";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Detai from "./pages/Detai";
 
 function App() {
   return (
-    <div className="">
-      <FeaturedTV />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/detail" element={<Detai />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
