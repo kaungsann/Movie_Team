@@ -9,7 +9,7 @@ const Triangle = () => {
 
 const UserDropdown = () => {
   return (
-    <div className="md:group-hover:block hidden hover:block absolute top-[80px]  bg-white w-[160px] md:right-10 right-1 rounded-b-md py-2 z-10 ">
+    <div className="md:group-hover:block hidden hover:block absolute top-[80px]  bg-white w-[160px] md:right-10 2xl:right-40 right-1 rounded-b-md py-2 z-10 ">
       <Triangle />
       <p className="cursor-pointer px-6 py-2 font-light text-sm hover:bg-stone-200 relative z-10">
         Sign In{" "}
