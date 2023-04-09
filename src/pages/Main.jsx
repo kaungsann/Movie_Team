@@ -1,4 +1,5 @@
 import React from "react";
+
 import Navbar from "../components/Navbar/Navbar";
 
 import Hero from "../components/Hero/Hero";
@@ -25,6 +26,8 @@ function Main() {
       <FeaturedTV></FeaturedTV>
       <Slider text="Hello again"></Slider>
       <Footer></Footer>
+
+
 
     </div>
   );
