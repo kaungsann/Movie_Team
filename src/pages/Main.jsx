@@ -7,7 +7,7 @@ function Main() {
   return (
     <div className="">
       <Navbar />
-      {/* <Hero /> */}
+      <Hero />
       <MovieDetail />
     </div>
   );
