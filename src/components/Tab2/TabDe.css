@@ -1,0 +1,14 @@
+.tabContainer {
+  cursor: pointer;
+  background-color: #131722;
+  padding: 40px;
+}
+.line {
+  height: 0.5px;
+}
+.boxContainer {
+  width: 80%;
+}
+.text {
+  text-underline-offset: 20px;
+}

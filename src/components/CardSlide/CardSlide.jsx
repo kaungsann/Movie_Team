@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Movie_card.css";
+import "./Card.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -78,14 +78,14 @@ const Movie_Card = () => {
   return (
     <>
       <div className="MovieCard ">
-        <div className="selectTitle fs-5 mb-3 float-start p-1 ml-">
+        <div className="selectTitle ">
           <span className="mx-3 text">
             <a
               onClick={() => {
                 window.scrollTo({ top: 0 });
               }}
             >
-              Todays
+              Today
             </a>
           </span>
           <span className="mx-3 text">
@@ -97,7 +97,7 @@ const Movie_Card = () => {
               This Week{" "}
             </a>
           </span>
-          <span className="mx-3 text">
+          <span className="text">
             <a
               onClick={() => {
                 window.scrollTo({ top: 0 });
@@ -119,8 +119,8 @@ const Movie_Card = () => {
                       height="150px"
                       className="img"
                     />
-                    <span className="p-2">{card.uuid}</span>
-                    <h4 className="cardname mt-1">{card.name}</h4>
+                    <span className=" text-cyan-100 mt-1">{card.uuid}</span>
+                    <h4 className="cardname text-cyan-100 mt-1">{card.name}</h4>
                   </div>
                 </>
               );
@@ -128,14 +128,16 @@ const Movie_Card = () => {
           </Slider>
 
           <div className="textandicons ">
-            <h2 className="featureText">Featured TV Episode Premieres</h2>
+            <h2 className="featureText text-yellow-100">
+              Featured TV Episode Premieres
+            </h2>
             <div className="iconsBox">
               <span
-                className="icon-arrow-left fs-3 icons float-start"
+                className="icon-arrow-left  icons  text-yellow-100"
                 onClick={handlePreviousClick}
               ></span>
               <span
-                className="icon-arrow-right fs-3 icons float-start"
+                className="icon-arrow-right  icons  text-yellow-100"
                 onClick={handleNextClick}
               ></span>
             </div>
