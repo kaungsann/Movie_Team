@@ -14,6 +14,9 @@ function Main() {
     <div className="">
       <Navbar />
 
+
+
+
       {/* <Hero /> */}
       {/* <MovieDetail /> */}
 
@@ -22,6 +25,7 @@ function Main() {
       <FeaturedTV></FeaturedTV>
       <Slider text="Hello again"></Slider>
       <Footer></Footer>
+
     </div>
   );
 }

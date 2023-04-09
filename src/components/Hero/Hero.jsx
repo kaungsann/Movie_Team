@@ -59,7 +59,7 @@ function Card({ image, title, category }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
-      <div className="absolute lg:top-[35%] md:top-[20%] top-[10%] px-10 text-white space-y-5 w-full z-10 text-center lg:text-left">
+      <div className="absolute lg:top-[35%] md:top-[20%] top-[10%] pl-10 2xl:pl-40 text-white space-y-5 w-full z-10 text-center lg:text-left">
         <p className="  font-bold md:text-6xl text-3xl cursor-pointer w-full lg:w-[40%] ">
           {title}
         </p>
@@ -145,7 +145,7 @@ function Hero() {
         onMouseLeave={autoplay.current.play}>
         {slides}
       </Carousel>
-      <div className="absolute right-0 top-[20%] pr-10 text-white hidden lg:block font-light">
+      <div className="absolute right-0 top-[20%] pr-10 2xl:pr-40 text-white hidden lg:block font-light">
         <p className="text-3xl">Today's Recommendations</p>
         <div className="grid grid-cols-3 gap-3 mt-4">
           {data.map((el) => (
