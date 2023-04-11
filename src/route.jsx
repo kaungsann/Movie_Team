@@ -7,6 +7,7 @@ import PopularPage from "./components/Popular/Popular";
 import MovieDetail from "./components/MovieDetail/MovieDetail";
 import SignIn from "./pages/Login";
 import Register from "./pages/Register";
+import Gallery from "./components/Gallery/Gallery";
 
 //test
 import Slider from "./components/Slider/Main";
@@ -22,6 +23,7 @@ function View() {
       <Route path="/contact" element={<Contact />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>
       <Route path="/register" element={<Register />}></Route>
+      <Route path="/gallery" element={<Gallery />}></Route>
     </Routes>
   );
 }
