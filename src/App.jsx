@@ -1,4 +1,5 @@
 import "./App.css";
+
 import View from "./route";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -7,6 +8,7 @@ function App() {
     <Router>
       <View></View>
     </Router>
+
   );
 }
 
