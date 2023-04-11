@@ -31,12 +31,14 @@ const Navbar = () => {
               <Home />
               <Movies />
               <TvShows />
+
               <button
                 onClick={() => {
                   window.location.assign("/contact");
                 }}>
                 Contact
               </button>
+
             </div>
           </li>
           <li className="flex items-center md:gap-8 gap-1">
