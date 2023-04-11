@@ -1,0 +1,78 @@
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+
+const Login = () => {
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const PhoneRef = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  return (
+    <div className="flex flex-row justify-center items-center  p-[5rem] py-[4rem] h-screen">
+      <div className="w-1/2  h-full flex flex-col justify-around items-center bg-[#debdbd] text-[#654444]">
+        <div className="text-5xl">Login</div>
+        <div className="text-2xl">Welcome Back</div>
+        <div className="flex flex-col justify-center items-center">
+          <div>Enjoy with movies</div>
+          <div className="flex flex-row">
+            <p>new user?</p>
+            <Link to="/register" className="text-blue-600">
+              Register
+            </Link>
+            <p>Here</p>
+          </div>
+        </div>
+      </div>
+      <div className="w-1/2 bg-red-400 h-full bg-[#d9d9d9]">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full h-full flex flex-col justify-center items-center gap-4"
+        >
+          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+            <input
+              type="text"
+              email="email"
+              ref={emailRef}
+              placeholder="Enter Email"
+              className="w-[300px] bg-transparent border-none outline-none"
+            />
+          </div>
+          <br />
+          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+            <input
+              type="text"
+              name="phoneNumber"
+              ref={PhoneRef}
+              placeholder="Enter Phone number"
+              className="w-[300px] bg-transparent border-none outline-none"
+            />
+          </div>
+          <br />
+
+          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+            <input
+              type="password"
+              password="password"
+              ref={passwordRef}
+              placeholder="Enter Your Password"
+              className="w-[300px] bg-transparent border-none outline-none"
+            />
+          </div>
+
+          <br />
+          <button
+            type="submit"
+            className="bg-[#007bff] px-[1rem] py-[.5rem] text-white rounded-lg"
+          >
+            Log In
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
