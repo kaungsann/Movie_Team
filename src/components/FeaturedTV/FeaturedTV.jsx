@@ -100,7 +100,11 @@ const FeaturedTV = () => {
                         <div className="text-3xl font-semibold">movie title</div>
                         <div>description</div>
                         <div className="lg:xl:2xl:md:flex hidden flex-row justify-center items-center gap-3">
-                          <button className="flex  flex-row rounded-lg bg-[#24baef] w-[123px] h-[45px] justify-center items-center ">
+                          <button
+                            onClick={() => {
+                              window.location.assign("movie-detail/1");
+                            }}
+                            className="flex  flex-row rounded-lg bg-[#24baef] w-[123px] h-[45px] justify-center items-center ">
                             WATCH NOW
                           </button>
                           <button className="flex flex-row rounded-lg  w-[123px] h-[45px] justify-center items-center ">

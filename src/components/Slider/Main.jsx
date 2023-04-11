@@ -23,7 +23,7 @@ function Main(props) {
   const next = () => setCurr((curr) => (curr === photos.length - 1 ? 0 : curr + 1));
   return (
     <div
-      className={`flex items-center flex-row  max-[820px]:flex-col-reverse ${
+      className={`flex items-center flex-row  max-[820px]:flex-col-reverse bg-slate-900 text-white py-5 pl-3 ${
         props.left ? "flex-row-reverse" : ""
       }`}>
       <div>

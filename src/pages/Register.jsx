@@ -18,18 +18,17 @@ const Register = () => {
           <div>Enjoy with movies</div>
           <div className="flex flex-row">
             <p>old user?</p>
-            <Link to="/login" className="text-blue-600">
+            <Link to="/signin" className="text-blue-600">
               login
             </Link>
             <p>Here</p>
           </div>
         </div>
       </div>
-      <div className="w-1/2 bg-red-400 h-full bg-[#d9d9d9]">
+      <div className="w-1/2 bg-red-400 h-full ">
         <form
           onSubmit={handleSubmit}
-          className="w-full h-full flex flex-col justify-center items-center gap-4"
-        >
+          className="w-full h-full flex flex-col justify-center items-center gap-4">
           <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
             <input
               type="text"
@@ -71,10 +70,7 @@ const Register = () => {
           </div>
 
           <br />
-          <button
-            type="submit"
-            className="bg-[#007bff] px-[1rem] py-[.5rem] text-white rounded-lg"
-          >
+          <button type="submit" className="bg-[#007bff] px-[1rem] py-[.5rem] text-white rounded-lg">
             Sign In
           </button>
         </form>

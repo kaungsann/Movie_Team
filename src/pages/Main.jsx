@@ -13,22 +13,10 @@ import FeaturedTV from "../components/FeaturedTV/FeaturedTV";
 function Main() {
   return (
     <div className="">
-      <Navbar />
-
-
-
-
-      {/* <Hero /> */}
-      {/* <MovieDetail /> */}
-
       <Hero />
       <Slider left={true} text="Hello"></Slider>
       <FeaturedTV></FeaturedTV>
       <Slider text="Hello again"></Slider>
-      <Footer></Footer>
-
-
-
     </div>
   );
 }
