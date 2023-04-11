@@ -2,21 +2,14 @@ import React, { useState, useEffect } from "react";
 import Slider from "./Slider";
 import Button from "./Button";
 import styles from "./Slider.module.css";
+import { fetchData } from "../../services/apiservices.js";
 
 function Main(props) {
   const [curr, setCurr] = useState(0);
   const [photos, setPhotos] = useState([]);
 
-  const fetchData = async () => {
-    const response = await fetch("https://picsum.photos/v2/list");
-    if (!response.ok) {
-      throw new Error("Data coud not be fetched!");
-    } else {
-      return response.json();
-    }
-  };
   useEffect(() => {
-    fetchData()
+    fetchData("https://picsum.photos/v2/list")
       .then((res) => {
         setPhotos(res);
       })
