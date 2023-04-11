@@ -39,23 +39,15 @@ const Register = () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <div className="w-1/2 bg-red-400 h-full ">
-        <form
-          onSubmit={handleSubmit}
-          className="w-full h-full flex flex-col justify-center items-center gap-4">
-          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
-=======
-      <div className="lg:w-1/2 flex flex-col items-center justify-around w-full bg-red-400 h-full bg-[#d9d9d9]">
+
+      <div className="lg:w-1/2 flex flex-col items-center justify-around w-full bg-red-400 h-full ">
         <div className="lg:hidden block text-4xl pt-[2rem] text-white w-full text-center">
           Sign Up From
         </div>
         <form
           onSubmit={handleSubmit}
-          className="w-full lg:h-full h-[60%] flex flex-col justify-center items-center gap-4"
-        >
+          className="w-full lg:h-full h-[60%] flex flex-col justify-center items-center gap-4">
           <div className="lg:w-[340px] w-[300px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
->>>>>>> new-branch-yel
             <input
               type="text"
               email="name"
