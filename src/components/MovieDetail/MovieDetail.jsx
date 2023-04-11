@@ -2,6 +2,7 @@ import React from "react";
 import BreadcrumbsCustom from "../Reusables/BreadcrumbsCustom";
 import ReactPlayer from "react-player";
 import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
+import Tab2 from "../Tab2/TabDe";
 const MovieDetail = () => {
   const items = [
     { title: "Home", href: "#" },
@@ -47,6 +48,7 @@ const MovieDetail = () => {
           </div>
         </div>
       </div>
+      <Tab2></Tab2>
     </section>
   );
 };

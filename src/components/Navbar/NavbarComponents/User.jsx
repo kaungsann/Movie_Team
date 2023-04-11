@@ -11,20 +11,25 @@ const UserDropdown = () => {
   return (
     <div className="md:group-hover:block hidden hover:block absolute top-[80px]  bg-white w-[160px] md:right-10 2xl:right-40 right-1 rounded-b-md py-2 z-10 ">
       <Triangle />
-      <p className="cursor-pointer px-6 py-2 font-light text-sm hover:bg-stone-200 relative z-10">
+      <p
+        onClick={() => {
+          window.location.assign("signin");
+        }}
+        className="cursor-pointer px-6 py-2 font-light text-sm hover:bg-stone-200 relative z-10">
         Sign In{" "}
       </p>
-      <p className="cursor-pointer px-6 py-2 font-light text-sm hover:bg-stone-200 relative z-10">
+      <p
+        onClick={() => {
+          window.location.assign("register");
+        }}
+        className="cursor-pointer px-6 py-2 font-light text-sm hover:bg-stone-200 relative z-10">
         Register
       </p>
     </div>
   );
 };
 
-const MobileDropdown = ({
-  toggleUserMobileDropdown,
-  setToggleUserMobileDropdown,
-}) => {
+const MobileDropdown = ({ toggleUserMobileDropdown, setToggleUserMobileDropdown }) => {
   return (
     <div
       className={`absolute md:top-[85px] top-[65px] bg-white w-[160px] md:right-10 right-1 rounded-b-md py-2 z-10 ${
@@ -33,12 +38,16 @@ const MobileDropdown = ({
       <Triangle />
       <p
         className="cursor-pointer px-6 py-2 font-light text-sm hover:bg-stone-200 relative z-10"
-        onClick={() => setToggleUserMobileDropdown((prev) => !prev)}>
+        onClick={() => {
+          setToggleUserMobileDropdown((prev) => !prev);
+        }}>
         Sign In{" "}
       </p>
       <p
         className="cursor-pointer px-6 py-2 font-light text-sm hover:bg-stone-200 relative z-10"
-        onClick={() => setToggleUserMobileDropdown((prev) => !prev)}>
+        onClick={() => {
+          setToggleUserMobileDropdown((prev) => !prev);
+        }}>
         Register
       </p>
     </div>
@@ -46,13 +55,14 @@ const MobileDropdown = ({
 };
 
 const User = () => {
-  const [toggleUserMobileDropdown, setToggleUserMobileDropdown] =
-    useState(false);
+  const [toggleUserMobileDropdown, setToggleUserMobileDropdown] = useState(false);
   return (
     <>
       <div
         className="flex items-center gap-1 cursor-pointer group py-3 md:py-5 "
-        onClick={() => setToggleUserMobileDropdown((prev) => !prev)}>
+        onClick={() => {
+          setToggleUserMobileDropdown((prev) => !prev);
+        }}>
         <img
           src="https://cdn-icons-png.flaticon.com/512/2102/2102647.png"
           width={32}
