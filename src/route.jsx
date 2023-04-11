@@ -8,6 +8,7 @@ import MovieDetail from "./components/MovieDetail/MovieDetail";
 
 //test
 import Slider from "./components/Slider/Main";
+import Contact from "./components/Contact/Contact";
 
 function View() {
   return (
@@ -16,6 +17,7 @@ function View() {
 
       <Route exact path="/popular" element={<PopularPage />}></Route>
       <Route path="/movie-detail/:id" element={<MovieDetail />}></Route>
+      <Route path="/contact" element={<Contact />}></Route>
     </Routes>
   );
 }
