@@ -1,66 +1,80 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import request from "../assets/api";
 
 const Login = () => {
-  const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const PhoneRef = useRef(null);
+  const phoneRef = useRef(null);
+  const [message, setMessage] = useState("");
+  const { login } = request;
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    const phone = phoneRef.current.value;
+    const password = passwordRef.current.value;
+    const response = await axios.post("http://localhost:8080/user/login", {
+      phone,
+      password,
+    });
+    const { data } = response;
+    console.log(data);
+
+    if (data.error) {
+      alert("fail");
+      setMessage(data.error);
+    } else {
+      alert("Successful login");
+      phoneRef.current.value = "";
+      passwordRef.current.value = "";
+    }
   };
 
   return (
-    <div className="flex flex-row justify-center items-center  p-[5rem] py-[4rem] h-screen">
-      <div className="w-1/2  h-full flex flex-col justify-around items-center bg-[#debdbd] text-[#654444]">
+    <div className="flex flex-row  justify-center items-center lg:p-[5rem] lg:py-[4rem] h-screen">
+      <div className="w-1/2 h-full hidden lg:flex flex-col justify-around items-center bg-[#debdbd] text-[#654444]">
         <div className="text-5xl">Login</div>
         <div className="text-2xl">Welcome Back</div>
         <div className="flex flex-col justify-center items-center">
           <div>Enjoy with movies</div>
           <div className="flex flex-row">
-            <p>new user?</p>
+            <p>New user?</p>
             <Link to="/register" className="text-blue-600">
-              Register
+              Register Here
             </Link>
-            <p>Here</p>
           </div>
         </div>
       </div>
-      <div className="w-1/2 bg-red-400 h-full bg-[#d9d9d9]">
+      <div className="lg:w-1/2 w-full flex flex-col items-center justify-center bg-red-400 lg:h-full h-screen bg-[#d9d9d9]">
+        <div className="lg:hidden block text-4xl pt-[2rem] text-white w-full text-center">
+          Login From
+        </div>
         <form
           onSubmit={handleSubmit}
-          className="w-full h-full flex flex-col justify-center items-center gap-4"
+          className="w-full lg:h-full h-[60%] flex flex-col justify-center items-center gap-4"
         >
-          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+          <div className="lg:w-[340px] w-[300px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
             <input
               type="text"
-              email="email"
-              ref={emailRef}
-              placeholder="Enter Email"
-              className="w-[300px] bg-transparent border-none outline-none"
-            />
-          </div>
-          <br />
-          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
-            <input
-              type="text"
-              name="phoneNumber"
-              ref={PhoneRef}
+              name="phone"
+              ref={phoneRef}
               placeholder="Enter Phone number"
-              className="w-[300px] bg-transparent border-none outline-none"
+              className="lg:w-[300px] w-[260px] bg-transparent border-none outline-none"
             />
           </div>
           <br />
 
-          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+          <div className="lg:w-[340px] w-[300px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
             <input
               type="password"
-              password="password"
+              name="password"
               ref={passwordRef}
               placeholder="Enter Your Password"
-              className="w-[300px] bg-transparent border-none outline-none"
+              className="lg:w-[300px] w-[260px] bg-transparent border-none outline-none"
             />
           </div>
+
+          {message && <div className="text-red-600">{message}</div>}
 
           <br />
           <button
@@ -70,6 +84,12 @@ const Login = () => {
             Log In
           </button>
         </form>
+        <div className="lg:hidden flex flex-row w-full justify-center">
+          <p className="text-white">New user?</p>
+          <Link to="/register" className="text-blue-600">
+            Register Here
+          </Link>
+        </div>
       </div>
     </div>
   );

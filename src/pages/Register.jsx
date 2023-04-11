@@ -1,17 +1,31 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const nameRef = useRef(null);
   const PhoneRef = useRef(null);
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8080/user/register", {
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        phone: PhoneRef.current.value,
+        password: passwordRef.current.value,
+      });
+      if (response && response.data) {
+        console.log(response.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
-    <div className="flex flex-row justify-center items-center  p-[5rem] py-[4rem] h-screen">
-      <div className="w-1/2  h-full flex flex-col justify-around items-center bg-[#debdbd] text-[#654444]">
+    <div className="flex  flex-row justify-center items-center  lg:p-[5rem] lg:py-[4rem] h-screen">
+      <div className="w-1/2 hidden  h-full lg:flex flex-col justify-around items-center bg-[#debdbd] text-[#654444]">
         <div className="text-5xl">Register</div>
         <div className="text-2xl">Welcome </div>
         <div className="flex flex-col justify-center items-center">
@@ -25,47 +39,59 @@ const Register = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <div className="w-1/2 bg-red-400 h-full ">
         <form
           onSubmit={handleSubmit}
           className="w-full h-full flex flex-col justify-center items-center gap-4">
           <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+=======
+      <div className="lg:w-1/2 flex flex-col items-center justify-around w-full bg-red-400 h-full bg-[#d9d9d9]">
+        <div className="lg:hidden block text-4xl pt-[2rem] text-white w-full text-center">
+          Sign Up From
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="w-full lg:h-full h-[60%] flex flex-col justify-center items-center gap-4"
+        >
+          <div className="lg:w-[340px] w-[300px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+>>>>>>> new-branch-yel
             <input
               type="text"
               email="name"
               ref={nameRef}
               placeholder="Enter name"
-              className="w-[300px] bg-transparent border-none outline-none"
+              className="lg:w-[300px] w-[260px] bg-transparent border-none outline-none"
             />
           </div>
           <br />
-          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+          <div className="lg:w-[340px] w-[300px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
             <input
               type="text"
               email="email"
               ref={emailRef}
               placeholder="Enter Email"
-              className="w-[300px] bg-transparent border-none outline-none"
+              className="lg:w-[300px] w-[260px] bg-transparent border-none outline-none"
             />
           </div>
           <br />
-          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+          <div className="lg:w-[340px] w-[300px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
             <input
               type="text"
               name="phoneNumber"
               ref={PhoneRef}
               placeholder="Enter Phone number"
-              className="w-[300px] bg-transparent border-none outline-none"
+              className="lg:w-[300px] w-[260px] bg-transparent border-none outline-none"
             />
           </div>
           <br />
-          <div className="w-[340px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+          <div className="lg:w-[340px] w-[300px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
             <input
               type="password"
               password="password"
               ref={passwordRef}
               placeholder="Enter Your Password"
-              className="w-[300px] bg-transparent border-none outline-none"
+              className="lg:w-[300px] w-[260px] bg-transparent border-none outline-none"
             />
           </div>
 
@@ -74,6 +100,13 @@ const Register = () => {
             Sign In
           </button>
         </form>
+        <div className="lg:hidden flex flex-row">
+          <p className="text-white">old user?</p>
+          <Link to="/login" className="text-blue-600">
+            login
+          </Link>
+          <p>Here</p>
+        </div>
       </div>
     </div>
   );

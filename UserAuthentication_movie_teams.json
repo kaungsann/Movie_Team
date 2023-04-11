@@ -1,0 +1,409 @@
+{
+    "meta": {
+        "__export_time": 1681143785174,
+        "__export_app": "firecamp_v2.7.1 ",
+        "__export_version": 1
+    },
+    "project": {
+        "name": "UserAuthentication",
+        "description": "",
+        "auth": {},
+        "scripts": {
+            "pre": "",
+            "post": "",
+            "test": ""
+        },
+        "meta": {
+            "active_auth": "no_auth"
+        }
+    },
+    "modules": [],
+    "requests": [
+        {
+            "meta": {
+                "name": "user Edit info",
+                "description": "",
+                "active_auth": "inherit",
+                "type": "api",
+                "version": "1.0",
+                "inherit_script": {
+                    "pre": true,
+                    "post": true,
+                    "test": true
+                }
+            },
+            "url": {
+                "slashes": true,
+                "protocol": "http:",
+                "hash": "",
+                "pathname": "/user/6434335242782a518b2ca036",
+                "auth": "",
+                "host": "localhost:6000",
+                "port": "6000",
+                "hostname": "localhost",
+                "password": "",
+                "username": "",
+                "origin": "http://localhost:6000",
+                "href": "http://localhost:6000/user/6434335242782a518b2ca036",
+                "query_params": [],
+                "path_params": []
+            },
+            "method": "PATCH",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text",
+                    "disable": false
+                }
+            ],
+            "config": {
+                "ORIGIN": "",
+                "USERAGENT": "",
+                "TIMEOUT_MS": 0,
+                "REJECT_UNAUTHORIZED": false,
+                "FOLLOWLOCATION": true,
+                "MAXREDIRS": -1,
+                "HTTP_VERSION": "V2Tls"
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "bodies": [
+                {
+                    "name": "Default",
+                    "meta": {
+                        "active_body_type": "application/json",
+                        "is_default": true
+                    },
+                    "body": {
+                        "application/json": {
+                            "value": "{\n \"name\" : \"Tom\"\n}",
+                            "headers": []
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "meta": {
+                "name": "Delete User",
+                "description": "",
+                "active_auth": "inherit",
+                "type": "api",
+                "version": "1.0",
+                "inherit_script": {
+                    "pre": true,
+                    "post": true,
+                    "test": true
+                }
+            },
+            "url": {
+                "slashes": true,
+                "protocol": "http:",
+                "hash": "",
+                "pathname": "/user/6434235f25cdc3e0c8115879",
+                "auth": "",
+                "host": "localhost:6000",
+                "port": "6000",
+                "hostname": "localhost",
+                "password": "",
+                "username": "",
+                "origin": "http://localhost:6000",
+                "href": "http://localhost:6000/user/6434235f25cdc3e0c8115879",
+                "query_params": [],
+                "path_params": []
+            },
+            "method": "DELETE",
+            "headers": [],
+            "config": {
+                "ORIGIN": "",
+                "USERAGENT": "",
+                "TIMEOUT_MS": 0,
+                "REJECT_UNAUTHORIZED": false,
+                "FOLLOWLOCATION": true,
+                "MAXREDIRS": -1,
+                "HTTP_VERSION": "V2Tls"
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "bodies": [
+                {
+                    "name": "Default",
+                    "meta": {
+                        "active_body_type": "noBody",
+                        "is_default": true
+                    },
+                    "body": {}
+                }
+            ]
+        },
+        {
+            "meta": {
+                "name": "UserLogin",
+                "description": "",
+                "active_auth": "inherit",
+                "type": "api",
+                "version": "1.0",
+                "inherit_script": {
+                    "pre": true,
+                    "post": true,
+                    "test": true
+                }
+            },
+            "url": {
+                "slashes": true,
+                "protocol": "http:",
+                "hash": "",
+                "pathname": "/user/login",
+                "auth": "",
+                "host": "localhost:6000",
+                "port": "6000",
+                "hostname": "localhost",
+                "password": "",
+                "username": "",
+                "origin": "http://localhost:6000",
+                "href": "http://localhost:6000/user/login",
+                "query_params": [],
+                "path_params": []
+            },
+            "method": "POST",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text",
+                    "disable": false
+                }
+            ],
+            "config": {
+                "ORIGIN": "",
+                "USERAGENT": "",
+                "TIMEOUT_MS": 0,
+                "REJECT_UNAUTHORIZED": false,
+                "FOLLOWLOCATION": true,
+                "MAXREDIRS": -1,
+                "HTTP_VERSION": "V2Tls"
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "bodies": [
+                {
+                    "name": "Default",
+                    "meta": {
+                        "active_body_type": "application/json",
+                        "is_default": true
+                    },
+                    "body": {
+                        "application/json": {
+                            "value": "{ \n  \"phone\" : \"09956265804\" ,\n  \"password\" : \"kaung123\"\n }",
+                            "headers": []
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "meta": {
+                "name": "User Register",
+                "description": "",
+                "active_auth": "inherit",
+                "type": "api",
+                "version": "1.0",
+                "inherit_script": {
+                    "pre": true,
+                    "post": true,
+                    "test": true
+                }
+            },
+            "url": {
+                "slashes": true,
+                "protocol": "http:",
+                "hash": "",
+                "pathname": "/user/register",
+                "auth": "",
+                "host": "localhost:6000",
+                "port": "6000",
+                "hostname": "localhost",
+                "password": "",
+                "username": "",
+                "origin": "http://localhost:6000",
+                "href": "http://localhost:6000/user/register",
+                "query_params": [],
+                "path_params": []
+            },
+            "method": "POST",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text",
+                    "disable": false
+                }
+            ],
+            "config": {
+                "ORIGIN": "",
+                "USERAGENT": "",
+                "TIMEOUT_MS": 0,
+                "REJECT_UNAUTHORIZED": false,
+                "FOLLOWLOCATION": true,
+                "MAXREDIRS": -1,
+                "HTTP_VERSION": "V2Tls"
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "bodies": [
+                {
+                    "name": "Default",
+                    "meta": {
+                        "active_body_type": "application/json",
+                        "is_default": true
+                    },
+                    "body": {
+                        "application/json": {
+                            "value": "{ \n  \"name\" :\"kaungsann\" ,\n  \"email\" :\"kaung@gmail.com\" ,\n  \"phone\" : \"09956265804\" ,\n  \"password\" : \"kaung123\"\n }\n\n",
+                            "headers": []
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "meta": {
+                "name": "get one user with id",
+                "description": "",
+                "active_auth": "inherit",
+                "type": "api",
+                "version": "1.0",
+                "inherit_script": {
+                    "pre": true,
+                    "post": true,
+                    "test": true
+                }
+            },
+            "url": {
+                "slashes": true,
+                "protocol": "http:",
+                "hash": "",
+                "pathname": "/user/6434335242782a518b2ca036",
+                "auth": "",
+                "host": "localhost:6000",
+                "port": "6000",
+                "hostname": "localhost",
+                "password": "",
+                "username": "",
+                "origin": "http://localhost:6000",
+                "href": "http://localhost:6000/user/6434335242782a518b2ca036",
+                "query_params": [],
+                "path_params": []
+            },
+            "method": "GET",
+            "headers": [],
+            "config": {
+                "ORIGIN": "",
+                "USERAGENT": "",
+                "TIMEOUT_MS": 0,
+                "REJECT_UNAUTHORIZED": false,
+                "FOLLOWLOCATION": true,
+                "MAXREDIRS": -1,
+                "HTTP_VERSION": "V2Tls"
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "bodies": [
+                {
+                    "name": "Default",
+                    "meta": {
+                        "active_body_type": "noBody",
+                        "is_default": true
+                    },
+                    "body": {}
+                }
+            ]
+        },
+        {
+            "meta": {
+                "name": "Get all user",
+                "description": "",
+                "active_auth": "inherit",
+                "type": "api",
+                "version": "1.0",
+                "inherit_script": {
+                    "pre": true,
+                    "post": true,
+                    "test": true
+                }
+            },
+            "url": {
+                "slashes": true,
+                "protocol": "http:",
+                "hash": "",
+                "pathname": "/user/",
+                "auth": "",
+                "host": "localhost:6000",
+                "port": "6000",
+                "hostname": "localhost",
+                "password": "",
+                "username": "",
+                "origin": "http://localhost:6000",
+                "href": "http://localhost:6000/user/",
+                "query_params": [],
+                "path_params": []
+            },
+            "method": "GET",
+            "headers": [],
+            "config": {
+                "ORIGIN": "",
+                "USERAGENT": "",
+                "TIMEOUT_MS": 0,
+                "REJECT_UNAUTHORIZED": false,
+                "FOLLOWLOCATION": true,
+                "MAXREDIRS": -1,
+                "HTTP_VERSION": "V2Tls"
+            },
+            "scripts": {
+                "pre": "",
+                "post": "",
+                "test": ""
+            },
+            "bodies": [
+                {
+                    "name": "Default",
+                    "meta": {
+                        "active_body_type": "noBody",
+                        "is_default": true
+                    },
+                    "body": {}
+                }
+            ]
+        }
+    ],
+    "environments": [
+        {
+            "name": "Production",
+            "variables": {
+                "variable_name": "variable_value"
+            }
+        },
+        {
+            "name": "Development",
+            "variables": {
+                "variable_name": "variable_value"
+            }
+        }
+    ]
+}
