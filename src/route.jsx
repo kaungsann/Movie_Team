@@ -11,7 +11,11 @@ import Gallery from "./components/Gallery/Gallery";
 
 //test
 import Slider from "./components/Slider/Main";
+
+import MovieCategory from "./components/MovieCategory/MovieCategory";
+
 import Contact from "./components/Contact/Contact";
+
 
 function View() {
   return (
@@ -20,10 +24,14 @@ function View() {
 
       <Route exact path="/popular" element={<PopularPage />}></Route>
       <Route path="/movie-detail/:id" element={<MovieDetail />}></Route>
+
+      <Route path="/movie-category" element={<MovieCategory />}></Route>
+
       <Route path="/contact" element={<Contact />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>
       <Route path="/register" element={<Register />}></Route>
       <Route path="/gallery" element={<Gallery />}></Route>
+
     </Routes>
   );
 }
