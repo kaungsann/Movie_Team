@@ -6,8 +6,8 @@ const MovieSliderItem = ({ title }) => {
       <a className="lg:xl:2xl:md:w-[230px] w-[100px] h-[55px] lg:xl:2xl:md:h-[130px] bg-gray-500">
         <img />
       </a>
-      <span>So2Eo3</span>
-      <div>{title}</div>
+      <span className="text-[12px] pt-[.6rem]">So2Eo3</span>
+      <div className="hoverBlue">{title}</div>
     </div>
   );
 };

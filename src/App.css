@@ -1,0 +1,29 @@
+.news-item {
+  border-bottom: 1px solid #2f2f33;
+}
+
+.news-item.last-item {
+  border-bottom: none;
+}
+.news-item.no-border {
+  border-bottom: none;
+}
+
+.top-list-wrapper {
+  border-bottom: 1px solid #2f2f33;
+}
+
+.top-list-wrapper.last-item {
+  border-bottom: none;
+}
+.myA {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.myA:hover {
+  opacity: 1;
+}
+
+.hoverBlue:hover {
+  color: #24baef;
+}

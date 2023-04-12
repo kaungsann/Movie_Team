@@ -39,18 +39,18 @@ const Footer = () => {
               <div className="text-2xl ">Movie Categories</div>
               <div className="flex flex-row justify-between w-[300px] items-center">
                 <div className="flex flex-col h-[150px] justify-between items-start">
-                  <a>Action</a>
-                  <a>Adventure</a>
-                  <a>Animation</a>
-                  <a>Comedy</a>
-                  <a>Crime</a>
+                  <a className="myA">Action</a>
+                  <a className="myA">Adventure</a>
+                  <a className="myA">Animation</a>
+                  <a className="myA">Comedy</a>
+                  <a className="myA">Crime</a>
                 </div>
                 <div className="flex flex-col h-[150px] justify-between items-start">
-                  <a>Drame</a>
-                  <a>Fantacy</a>
-                  <a>Horror</a>
-                  <a>Mystery</a>
-                  <a>Romance</a>
+                  <a className="myA">Drame</a>
+                  <a className="myA">Fantacy</a>
+                  <a className="myA">Horror</a>
+                  <a className="myA">Mystery</a>
+                  <a className="myA">Romance</a>
                 </div>
               </div>
             </div>
@@ -58,29 +58,29 @@ const Footer = () => {
               <div className="text-2xl">TV Series</div>
               <div className="flex flex-row justify-between w-[300px]  items-center">
                 <div className="flex flex-col justify-between h-[150px]    items-start ">
-                  <a>Valentine Day </a>
-                  <a>Underrated Comedies</a>
-                  <a>Scary TV Series</a>
-                  <a>Best 2018 Documentaries</a>
-                  <a>Classic Shows</a>
+                  <a className="myA">Valentine Day </a>
+                  <a className="myA">Underrated Comedies</a>
+                  <a className="myA">Scary TV Series</a>
+                  <a className="myA">Best 2018 Documentaries</a>
+                  <a className="myA">Classic Shows</a>
                 </div>
                 <div className="flex flex-col h-[150px] justify-between items-start ">
-                  <a>Drame</a>
-                  <a>Fantacy</a>
-                  <a>Horror</a>
-                  <a>Mystery</a>
-                  <a>Romance</a>
+                  <a className="myA">Drame</a>
+                  <a className="myA">Fantacy</a>
+                  <a className="myA">Horror</a>
+                  <a className="myA">Mystery</a>
+                  <a className="myA">Romance</a>
                 </div>
               </div>
             </div>
             <div className=" h-full gap-[1rem] flex flex-col justify-center items-start w-[400px]">
               <div className="text-2xl">Support</div>
               <div className="flex flex-col h-[150px] justify-between items-start">
-                <a>My Account </a>
-                <a>FAQ</a>
-                <a>Watch on TV</a>
-                <a>Help Center</a>
-                <a>Contact</a>
+                <a className="myA">My Account </a>
+                <a className="myA">FAQ</a>
+                <a className="myA">Watch on TV</a>
+                <a className="myA">Help Center</a>
+                <a className="myA">Contact</a>
               </div>
             </div>
           </div>

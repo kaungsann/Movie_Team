@@ -24,8 +24,8 @@ const Register = () => {
     }
   };
   return (
-    <div className="flex  flex-row justify-center items-center  lg:p-[5rem] lg:py-[4rem] h-screen">
-      <div className="w-1/2 hidden  h-full lg:flex flex-col justify-around items-center bg-[#debdbd] text-[#654444]">
+    <div className="flex bg-[#131722]  flex-row justify-center items-center  lg:p-[5rem] lg:py-[4rem] h-screen">
+      <div className="w-1/2 hidden  h-full lg:flex flex-col justify-around items-center bg-[#1c212e] text-[#fff]">
         <div className="text-5xl">Register</div>
         <div className="text-2xl">Welcome </div>
         <div className="flex flex-col justify-center items-center">
@@ -40,7 +40,7 @@ const Register = () => {
         </div>
       </div>
 
-      <div className="lg:w-1/2 flex flex-col items-center justify-around w-full bg-red-400 h-full ">
+      <div className="lg:w-1/2 flex flex-col items-center justify-around w-full  h-full ">
         <div className="lg:hidden block text-4xl pt-[2rem] text-white w-full text-center">
           Sign Up From
         </div>
@@ -77,7 +77,7 @@ const Register = () => {
             />
           </div>
           <br />
-          <div className="lg:w-[340px] w-[300px] h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
+          <div className="lg:w-[340px] w-[300px]  h-[40px] bg-white flex flex-row justify-center items-center rounded-full">
             <input
               type="password"
               password="password"
@@ -97,7 +97,7 @@ const Register = () => {
           <Link to="/login" className="text-blue-600">
             login
           </Link>
-          <p>Here</p>
+          <p className="text-white">Here</p>
         </div>
       </div>
     </div>
