@@ -11,4 +11,10 @@ module.exports = {
     phone: joi.string().min(9).max(12).required(),
     password: joi.string().min(6).max(24),
   }),
+  idSchema: joi.object({
+    id: joi
+      .string()
+      .regex(/^[0-9a-fA-F]{24}$/)
+      .required(),
+  }),
 };
