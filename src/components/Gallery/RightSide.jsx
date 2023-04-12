@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 
 const RightSide = () => {
   return (
-    <div className="lg:w-[75%] ml-auto">
+    <div className="lg:w-[75%]">
       <h1 className="text-3xl">Action</h1>
       <MoviesContainer />
       <Pagination />

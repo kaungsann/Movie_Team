@@ -18,13 +18,13 @@ function MovieCategory() {
   });
   return (
     <>
-      <div className="bg-gray-900">
-        <div className="md:container md:mx-auto grid grid-cols-6">
-          <div className="col-span-2 text-white my-5 rounded-sm bg-gray-600 p-5">
-            <h3 className="text-2xl font-medium border-b border-gray-500 h-12">
+      <div className=" bg-[#1c212e] lg:bg-transparent">
+        <div className="">
+          <div className=" text-white rounded-sm bg-[#1c212e] p-5">
+            <h3 className="text-2xl font-medium border-b border-white/10 h-12">
               Categories
             </h3>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 py-4">
               <div className="checkbox-container m-3">
                 <input type="checkbox" name="Action" className="checkbox m-3" />
                 <label htmlFor=""> Action</label>
@@ -70,60 +70,80 @@ function MovieCategory() {
                 <label htmlFor="">Crime</label>
               </div>
             </div>
-            <div className="year grid grid-cols-5">
-              <span className="bg-gray-700 text-cyan-300 p-4 m-1 text-center text-base">
+            <div className="year grid grid-cols-4">
+              <span className="bg-gray-700 text-cyan-300 p-2 m-1 text-center text-base">
                 {year}
               </span>
-              <span className="bg-gray-700 text-cyan-300 p-4 m-1 text-center text-base">
+              <span className="bg-gray-700 text-cyan-300 p-2 m-1 text-center text-base">
                 {year}
               </span>
-              <span className="bg-gray-700 text-cyan-300 p-4 m-1 text-center text-base">
+              <span className="bg-gray-700 text-cyan-300 p-2 m-1 text-center text-base">
                 {year}
               </span>
-              <span className="bg-gray-700 text-cyan-300 p-4 m-1 text-center text-base">
+              <span className="bg-gray-700 text-cyan-300 p-2 m-1 text-center text-base">
                 {year}
               </span>
             </div>
             <div>
-              <h3 className="text-2xl font-medium border-b border-gray-500 h-12 mt-5">
+              <h3 className="text-2xl font-medium border-b border-white/10 h-12 mt-5">
                 Movies By Year
               </h3>
-              <div className="year grid grid-cols-5">
-                <span className="bg-gray-700 text-cyan-300 p-2 m-2 text-center text-base">
+              <div className="year grid grid-cols-5 py-2">
+                <span className="bg-gray-700 text-cyan-300 p-1 m-1 text-center text-base">
                   {year}
                 </span>
-                <span className="bg-gray-700 text-cyan-300 p-2 m-2 text-center text-base">
+                <span className="bg-gray-700 text-cyan-300 p-1 m-1 text-center text-base">
                   {year}
                 </span>
-                <span className="bg-gray-700 text-cyan-300 p-2 m-2 text-center text-base">
+                <span className="bg-gray-700 text-cyan-300 p-1 m-1 text-center text-base">
                   {year}
                 </span>
-                <span className="bg-gray-700 text-cyan-300 p-2 m-2 text-center text-base">
+                <span className="bg-gray-700 text-cyan-300 p-1 m-1 text-center text-base">
                   {year}
                 </span>
-                <span className="bg-gray-700 text-cyan-300 p-2 m-2 text-center text-base">
+                <span className="bg-gray-700 text-cyan-300 p-1 m-1 text-center text-base">
                   {year}
                 </span>
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-medium border-b border-gray-500 h-12 mt-5">
+              <h3 className="text-2xl font-medium border-b border-white/10 h-12 mt-5">
                 Filter By Rating
               </h3>
               <div className="mt-3">
-                <Rate defaultValue={10} count={10} style={{ color: "cyan" }} /> <span className="ml-10 text-start">(2)</span>
-                <Rate defaultValue={9} count={10} style={{color:"cyan"}} /> <span className="ml-10 text-start">(10)</span>
-                <Rate defaultValue={8} count={10} style={{color:"cyan"}} /> <span className="ml-10 text-start">(27)</span>
-                <Rate defaultValue={7} count={10} style={{color:"cyan"}} /> <span className="ml-10 text-start">(13)</span>
-                <Rate defaultValue={6} count={10} style={{color:"cyan"}} /> <span className="ml-10 text-start">(1)</span>
-                
+                <Rate defaultValue={10} count={10} style={{ color: "cyan" }} />{" "}
+                <span className="ml-10 text-start">(2)</span>
+                <Rate
+                  defaultValue={9}
+                  count={10}
+                  style={{ color: "cyan" }}
+                />{" "}
+                <span className="ml-10 text-start">(10)</span>
+                <Rate
+                  defaultValue={8}
+                  count={10}
+                  style={{ color: "cyan" }}
+                />{" "}
+                <span className="ml-10 text-start">(27)</span>
+                <Rate
+                  defaultValue={7}
+                  count={10}
+                  style={{ color: "cyan" }}
+                />{" "}
+                <span className="ml-10 text-start">(13)</span>
+                <Rate
+                  defaultValue={6}
+                  count={10}
+                  style={{ color: "cyan" }}
+                />{" "}
+                <span className="ml-10 text-start">(1)</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="md:container md:mx-auto grid grid-cols-6">
-          <div className="col-span-2 text-white my-5 rounded-sm bg-gray-600 p-5">
-            <h3 className="text-2xl font-medium border-b border-gray-500 h-12">
+        <div className="">
+          <div className=" text-white py-5 rounded-sm bg-[#1c212e] p-5">
+            <h3 className="text-2xl font-medium border-b border-white/10 h-12 mb-3">
               Top 5 Lists
             </h3>
             <span>
