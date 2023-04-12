@@ -2,9 +2,6 @@ import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
 import Autoplay from "embla-carousel-autoplay";
 
-import { useMantineTheme } from "@mantine/core";
-import { useRef } from "react";
-
 import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem } from "@mantine/core";
 import { useEffect, useRef } from "react";
 
@@ -46,7 +43,6 @@ function IndicatorGrid() {
   );
 }
 
-
 function Card({ image, title, category }) {
   return (
     <div
@@ -75,7 +71,6 @@ function Card({ image, title, category }) {
           </button>
 
           <button className="uppercase hover:bg-white hover:text-black py-3 md:py-5 px-10  text-lg  rounded-lg border border-white transition-all duration-300">
-
             + Playlist
           </button>
         </div>

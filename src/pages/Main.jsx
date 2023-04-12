@@ -15,18 +15,13 @@ import FeaturedTV from "../components/FeaturedTV/FeaturedTV";
 function Main() {
   return (
     <div className="">
-
       <Hero />
-      <MovieDetail />
-      <RandomMovie />
       {/* <Gallery /> */}
 
-      <Hero />
       <Slider left={true} text="Hello"></Slider>
+      <RandomMovie />
       <FeaturedTV></FeaturedTV>
       <Slider text="Hello again"></Slider>
-
-
     </div>
   );
 }
