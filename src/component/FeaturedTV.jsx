@@ -16,19 +16,21 @@ const FeaturedTV = () => {
     axios
       .get(request.featured)
       .then((res) => {
-        setMovies(res.data);
+        setMovies(res.data.slice(0, 10)); // get the first 10 items
       })
       .catch((err) => console.error(err));
+
     axios
       .get(request.top9)
       .then((res) => {
-        setTop(res.data);
+        setTop(res.data.slice(0, 10)); // get the first 10 items
       })
       .catch((err) => console.error(err));
+
     axios
       .get(request.newTest)
       .then((res) => {
-        setNews(res.data);
+        setNews(res.data.slice(0, 10)); // get the first 10 items
       })
       .catch((err) => console.error(err));
   }, []);
@@ -69,15 +71,24 @@ const FeaturedTV = () => {
       </div>
       <div className="flex xl:flex-row 2xl:flex-row flex-col lg:flex-row justify-between p-[1rem] lg:xl:2xl:p-[3rem]  gap-5 items-start">
         <div className="flex flex-col justify-center items-center w-full lg:xl:2xl:w-[450px] pt-[0rem] gap-4 bg-[#1c212e] text-white">
-          <div className="flex flex-row justify-between items-center w-[300px] lg:xl:2xl:md:w-[350px] border-b border-black  h-[88px]">
+          <div className="flex flex-row justify-between items-center w-[300px] lg:xl:2xl:md:w-[350px] news-item   h-[88px]">
             <div className="text-xl ">Top 10 this Week</div>
             <div className="lg:xl:2xl:md:flex hidden flex-row justify-between w-[130px] items-center">
               <div className="text-blue-500">Movies</div>
               <div>TV Series</div>
             </div>
           </div>
-          {tops.map((top) => {
-            return <TopList list={top.id} />;
+          {tops.map((top, index) => {
+            return (
+              <div
+                key={index}
+                className={`top-list-wrapper ${
+                  index === tops.length - 1 ? "last-item" : ""
+                }`}
+              >
+                <TopList list={top.id} />
+              </div>
+            );
           })}
         </div>
         <div className="flex flex-col  mr-[100px] justify-center items-start">
@@ -85,8 +96,8 @@ const FeaturedTV = () => {
             <div className="text-3xl text-white">Newest Movies</div>
             <div className="lg:xl:2xl:md:flex hidden w-[300px] flex-row justify-around  items-center">
               <a className="text-[#24baef]">Today</a>
-              <a>This week</a>
-              <a>Last 30 days</a>
+              <a className="text-white">This week</a>
+              <a className="text-white"> Last 30 days</a>
             </div>
           </div>
           <div>
@@ -120,9 +131,14 @@ const FeaturedTV = () => {
             })}
           </div>
           <div className=" grid lg:xl:2xl:md:grid-cols-2 sm:grid-cols-1  grid-rows-5 gap-4  ">
-            {news.map((news) => {
+            {news.map((news, index) => {
               return (
-                <div>
+                <div
+                  key={index}
+                  className={`news-item ${
+                    index === news.length - 1 ? "last-item" : ""
+                  } ${index === 8 || index === 9 ? "no-border" : ""}`}
+                >
                   <NewMove />
                 </div>
               );

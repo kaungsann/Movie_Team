@@ -31,8 +31,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-row  justify-center items-center lg:p-[5rem] lg:py-[4rem] h-screen">
-      <div className="w-1/2 h-full hidden lg:flex flex-col justify-around items-center bg-[#debdbd] text-[#654444]">
+    <div className="flex flex-row bg-[#131722] justify-center items-center lg:p-[5rem] lg:py-[4rem] h-screen">
+      <div className="w-1/2 h-full hidden lg:flex flex-col justify-around items-center bg-[#1c212e] text-[#fff]">
         <div className="text-5xl">Login</div>
         <div className="text-2xl">Welcome Back</div>
         <div className="flex flex-col justify-center items-center">
@@ -45,7 +45,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="lg:w-1/2 w-full flex flex-col items-center justify-center bg-red-400 lg:h-full h-screen bg-[#d9d9d9]">
+      <div className="lg:w-1/2 w-full flex flex-col items-center justify-center bg-red-400 lg:h-full h-screen bg-transparent">
         <div className="lg:hidden block text-4xl pt-[2rem] text-white w-full text-center">
           Login From
         </div>
@@ -87,8 +87,9 @@ const Login = () => {
         <div className="lg:hidden flex flex-row w-full justify-center">
           <p className="text-white">New user?</p>
           <Link to="/register" className="text-blue-600">
-            Register Here
+            Register
           </Link>
+          <p className="text-white">Here</p>
         </div>
       </div>
     </div>
