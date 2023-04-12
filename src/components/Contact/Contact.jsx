@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import "./Contact.css";
 function Contact() {
-  const [text, setText] = useState(true);
-  const [text1, setText1] = useState(true);
-  const [text2, setText2] = useState(true);
-  const [text3, setText3] = useState(true);
-  const [text4, setText4] = useState(true);
+  const [text, setText] = useState(false);
+  const [text1, setText1] = useState(false);
+  const [text2, setText2] = useState(false);
+  const [text3, setText3] = useState(false);
+  const [text4, setText4] = useState(false);
 
   return (
     <>
@@ -49,7 +49,7 @@ function Contact() {
               className="p-4 w-auto border-slate-400 border-2  rounded focus:outline-none focus:ring  focus:ring-violet-300"
             />
           </div>
-          <div className="flex flex-col mt-2  border-slate-500  mt-2">
+          <div className="flex flex-col   border-slate-500  mt-2">
             <span className="text-2xl my-3">Your Message</span>
 
             <textarea
