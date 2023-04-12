@@ -15,6 +15,7 @@ import Slider from "./components/Slider/Main";
 import MovieCategory from "./components/MovieCategory/MovieCategory";
 
 import Contact from "./components/Contact/Contact";
+import Viking from "./components/Viking/Viking";
 
 
 function View() {
@@ -28,6 +29,7 @@ function View() {
       <Route path="/movie-category" element={<MovieCategory />}></Route>
 
       <Route path="/contact" element={<Contact />}></Route>
+
       <Route path="/signin" element={<SignIn />}></Route>
       <Route path="/register" element={<Register />}></Route>
       <Route path="/gallery" element={<Gallery />}></Route>

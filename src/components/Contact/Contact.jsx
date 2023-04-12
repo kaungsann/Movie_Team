@@ -49,7 +49,7 @@ function Contact() {
               className="p-2 w-auto border-slate-400 border-2  rounded focus:outline-none focus:ring  focus:ring-violet-300"
             />
           </div>
-          <div className="flex flex-col mt-2  border-slate-500  mt-2">
+          <div className="flex flex-col   border-slate-500  mt-2">
             <span className="text-2xl my-3">Your Message</span>
 
             <textarea
