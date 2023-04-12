@@ -41,25 +41,22 @@ const MoviesDropdown = () => {
               className="object-cover"
             />
             <div>
-              <p className=" text-gray-500 text-xs mb-1">
-                2017 Comedy,Adventure...
-              </p>
+              <p className=" text-gray-500 text-xs mb-1">2017 Comedy,Adventure...</p>
               <BoldHeading>Avatar</BoldHeading>
               <p className="text-sm my-3">
-                Pakistan-born comedian Kumail Nanjiani and grad student Emily
-                Gardner fall in love but struggle as their cultures clash. When
-                Emily contracts a mysterious
+                Pakistan-born comedian Kumail Nanjiani and grad student Emily Gardner fall in love
+                but struggle as their cultures clash. When Emily contracts a mysterious
               </p>
               <div className="">
-                <button className="font-medium text-cyan-400 mr-3">
+                <button
+                  onClick={() => {
+                    window.location.assign("/movie-detail/1");
+                  }}
+                  className="font-medium text-cyan-400 mr-3">
                   Watch Now
                 </button>
-                <span className=" rotate-[30deg] absolute text-gray-300">
-                  |
-                </span>
-                <button className="font-medium text-gray-400 ml-3">
-                  + Playlist
-                </button>
+                <span className=" rotate-[30deg] absolute text-gray-300">|</span>
+                <button className="font-medium text-gray-400 ml-3">+ Playlist</button>
               </div>
             </div>
           </div>
@@ -92,14 +89,8 @@ const MoviesDropdown = () => {
               {dummySlides.map((el) => (
                 <Carousel.Slide>
                   <div className="relative w-full h-full">
-                    <img
-                      src={el.img}
-                      className="w-full h-full absolute top-0 z-0 left-0"
-                      alt=""
-                    />
-                    <p className="absolute bottom-8 left-5 z-10 text-white font-bold">
-                      {el.title}
-                    </p>
+                    <img src={el.img} className="w-full h-full absolute top-0 z-0 left-0" alt="" />
+                    <p className="absolute bottom-8 left-5 z-10 text-white font-bold">{el.title}</p>
                     <div className="bg-gradient-to-t from-black/70 w-full h-full absolute bottom-0"></div>
                   </div>
                 </Carousel.Slide>

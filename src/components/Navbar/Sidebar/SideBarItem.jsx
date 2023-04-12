@@ -17,7 +17,10 @@ const SideBarItem = ({ item, close }) => {
       <div className={` ${openSideBarChild ? "block" : "hidden"}`}>
         {item.children.map((el, index) => (
           <div
-            onClick={close}
+            onClick={() => {
+              close();
+              window.location.assign("/gallery");
+            }}
             key={"sideItemChild" + index}
             className="cursor-pointer px-10 py-2 font-light hover:bg-stone-200 text-sm">
             {el}

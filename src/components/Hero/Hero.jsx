@@ -1,8 +1,51 @@
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
 import Autoplay from "embla-carousel-autoplay";
+
 import { useMantineTheme } from "@mantine/core";
 import { useRef } from "react";
+
+import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem } from "@mantine/core";
+import { useEffect, useRef } from "react";
+
+function IndicatorGrid() {
+  return (
+    <div class="mantine-19swgkw mantine-Carousel-indicators">
+      <button
+        class="mantine-UnstyledButton-root mantine-Carousel-indicator mantine-1jkjqkp"
+        type="button"
+        aria-hidden="true"
+        tabindex="-1"
+        data-active="true"></button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Carousel-indicator mantine-1jkjqkp"
+        type="button"
+        aria-hidden="true"
+        tabindex="-1"></button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Carousel-indicator mantine-1jkjqkp"
+        type="button"
+        aria-hidden="true"
+        tabindex="-1"></button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Carousel-indicator mantine-1jkjqkp"
+        type="button"
+        aria-hidden="true"
+        tabindex="-1"></button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Carousel-indicator mantine-1jkjqkp"
+        type="button"
+        aria-hidden="true"
+        tabindex="-1"></button>
+      <button
+        class="mantine-UnstyledButton-root mantine-Carousel-indicator mantine-1jkjqkp"
+        type="button"
+        aria-hidden="true"
+        tabindex="-1"></button>
+    </div>
+  );
+}
+
 
 function Card({ image, title, category }) {
   return (
@@ -23,10 +66,16 @@ function Card({ image, title, category }) {
           <p className="px-3">1hr 55mins</p>
         </div>
         <div className="md:space-x-5 flex flex-col md:flex-row space-y-5 md:space-y-0 md:justify-center lg:justify-start">
-          <button className="uppercase py-3 md:py-5 px-10  text-lg bg-cyan-500 rounded-lg border border-cyan-500 hover:border-cyan-600 hover:bg-cyan-600 transition-all duration-300">
+          <button
+            onClick={() => {
+              window.location.assign("/movie-detail/1");
+            }}
+            className="uppercase py-3 md:py-5 px-10  text-lg bg-cyan-500 rounded-lg border border-cyan-500 hover:border-cyan-600 hover:bg-cyan-600 transition-all duration-300">
             Watch Now
           </button>
+
           <button className="uppercase hover:bg-white hover:text-black py-3 md:py-5 px-10  text-lg  rounded-lg border border-white transition-all duration-300">
+
             + Playlist
           </button>
         </div>
