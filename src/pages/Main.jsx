@@ -11,6 +11,7 @@ import RandomMovie from "../components/RandomMovieWithModal/RandomMovie";
 import Footer from "../components/Footer/Footer";
 import Slider from "../components/Slider/Main";
 import FeaturedTV from "../components/FeaturedTV/FeaturedTV";
+import Viking from "../components/Viking/Viking";
 
 function Main() {
   return (
@@ -22,6 +23,7 @@ function Main() {
       <RandomMovie />
       <FeaturedTV></FeaturedTV>
       <Slider text="Hello again"></Slider>
+      <Viking></Viking>
     </div>
   );
 }
