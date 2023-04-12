@@ -1,0 +1,15 @@
+.btnTop {
+  position: fixed;
+  width: 38px;
+  height: 38px;
+  border-radius: 5px;
+  bottom: 5vh;
+  right: 5vw;
+  font-size: 1.7rem;
+  font-weight: 500;
+  transition: 0.4s all ease-in-out;
+}
+.btnTop:hover {
+  cursor: pointer;
+  box-shadow: #ffffff54 1px 1px 10px;
+}

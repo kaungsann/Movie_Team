@@ -14,11 +14,15 @@ function Slider(props) {
               Featured
             </span>
             <img
+              onClick={() => {
+                window.location.assign("/movie-detail/1");
+              }}
               src={item?.download_url}
               alt=""
               // style={{ width: "200px", height: "250px", margin: "5px ", borderRadius: "2px" }}
               // className={styles["mobile-image"]}
             />
+            <p className={`text-teal-500`}>text</p>
             <p>Hello</p>
           </div>
         ))}

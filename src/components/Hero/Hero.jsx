@@ -1,15 +1,8 @@
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  createStyles,
-  Paper,
-  Text,
-  Title,
-  Button,
-  useMantineTheme,
-  rem,
-} from "@mantine/core";
+
+import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem } from "@mantine/core";
 import { useEffect, useRef } from "react";
 
 function IndicatorGrid() {
@@ -59,7 +52,7 @@ function Card({ image, title, category }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
-      <div className="absolute lg:top-[35%] md:top-[20%] top-[10%] pl-10 2xl:pl-40 text-white space-y-5 w-full z-10 text-center lg:text-left">
+      <div className="absolute lg:top-[35%] md:top-[20%] top-[10%] px-5  lg:pl-20 2xl:pl-40 text-white space-y-5 w-full z-10 text-center lg:text-left">
         <p className="  font-bold md:text-6xl text-3xl cursor-pointer w-full lg:w-[40%] ">
           {title}
         </p>
@@ -69,10 +62,15 @@ function Card({ image, title, category }) {
           <p className="px-3">1hr 55mins</p>
         </div>
         <div className="md:space-x-5 flex flex-col md:flex-row space-y-5 md:space-y-0 md:justify-center lg:justify-start">
-          <button className="uppercase py-3 md:py-5 px-10  text-lg bg-cyan-500 rounded-lg border border-cyan-500 hover:border-cyan-600 hover:bg-cyan-600 transition-all duration-300">
+          <button
+            onClick={() => {
+              window.location.assign("/movie-detail/1");
+            }}
+            className="uppercase py-3 md:py-5 px-10  text-lg bg-cyan-500 rounded-lg border border-cyan-500 hover:border-cyan-600 hover:bg-cyan-600 transition-all duration-300">
             Watch Now
           </button>
-          <button className="uppercase py-3 md:py-5 px-10  text-lg  rounded-lg border border-white ransition-all duration-300">
+
+          <button className="uppercase hover:bg-white hover:text-black py-3 md:py-5 px-10  text-lg  rounded-lg border border-white transition-all duration-300">
             + Playlist
           </button>
         </div>
