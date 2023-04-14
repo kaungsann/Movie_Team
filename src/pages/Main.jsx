@@ -13,7 +13,16 @@ import Slider from "../components/Slider/Main";
 import FeaturedTV from "../components/FeaturedTV/FeaturedTV";
 import Viking from "../components/Viking/Viking";
 
+//test
+import { fetchData } from "../services/apiservices.js";
+import { Movies_Gernes_API } from "../services/Constant.js";
+
 function Main() {
+  React.useEffect(() => {
+    fetchData(Movies_Gernes_API).then((res) => {
+      console.log(res.genres, "response movie gernes");
+    });
+  }, []);
   return (
     <div className="">
       <Hero />

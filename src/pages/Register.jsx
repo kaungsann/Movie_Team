@@ -93,7 +93,7 @@ const Register = () => {
           </button>
         </form>
         <div className="lg:hidden flex flex-row">
-          <p className="text-white">old user?</p>
+          <p className="text-white">Have an account?</p>
           <Link to="/login" className="text-blue-600">
             login
           </Link>
