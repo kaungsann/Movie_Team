@@ -1,10 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import MovieSliderItem from "./MovieSliderItem";
 import axios from "axios";
-import request from "../../services/Constant.js";
+import request, {
+  Movies_Gernes_API,
+  Movie_Lists_API,
+} from "../../services/Constant.js";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 import TopList from "./TopList";
 import NewMove from "./NewMove";
+import { fetchWithAxios } from "../../services/apiservices.js";
 
 const FeaturedTV = () => {
   const [movies, setMovies] = useState([]);
@@ -47,7 +51,8 @@ const FeaturedTV = () => {
       <div className="flex  flex-col lg:xl:2xl:md:flex-row justify-center  items-center p-[3rem]  text-white">
         <div
           className="max-w-[1000px]   h-[200px] flex   flex-row justify-start items-center   gap-5 overflow-x-scroll scroll-smooth scrollbar-hide relative "
-          ref={sliderRef}>
+          ref={sliderRef}
+        >
           <div className="flex   gap-5 flex-row justify-start items-center ">
             {movies.map((movie) => {
               return <MovieSliderItem key={movie.id} title={movie.username} />;
@@ -108,14 +113,17 @@ const FeaturedTV = () => {
                       <div className="lg:xl:2xl:md:w-[180px] lg:xl:2xl:md:h-[250px] w-[280px] h-[400px] bg-[#1c212e]"></div>
                       <div className="flex flex-col justify-start items-start h-full gap-3">
                         <div>year</div>
-                        <div className="text-3xl font-semibold">movie title</div>
+                        <div className="text-3xl font-semibold">
+                          movie title
+                        </div>
                         <div>description</div>
                         <div className="lg:xl:2xl:md:flex hidden flex-row justify-center items-center gap-3">
                           <button
                             onClick={() => {
                               window.location.assign("movie-detail/1");
                             }}
-                            className="flex  flex-row rounded-lg bg-[#24baef] w-[123px] h-[45px] justify-center items-center ">
+                            className="flex  flex-row rounded-lg bg-[#24baef] w-[123px] h-[45px] justify-center items-center "
+                          >
                             WATCH NOW
                           </button>
                           <button className="flex flex-row rounded-lg  w-[123px] h-[45px] justify-center items-center ">

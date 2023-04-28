@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const fetchData = async (api) => {
   const response = await fetch(api);
   if (!response.ok) {
@@ -5,4 +7,12 @@ export const fetchData = async (api) => {
   } else {
     return response.json();
   }
+};
+
+export const fetchWithAxios = (url) => {
+  return axios.get(url, {
+    headers: {
+      accept: "applictaion/json",
+    },
+  });
 };
