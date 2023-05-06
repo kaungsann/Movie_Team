@@ -18,20 +18,25 @@ import { fetchData } from "../services/apiservices.js";
 import { Movies_Gernes_API } from "../services/Constant.js";
 
 function Main() {
+  const [movies_gernes, setMovies_gernes] = React.useState([]);
   React.useEffect(() => {
-    fetchData(Movies_Gernes_API).then((res) => {
-      console.log(res.genres, "response movie gernes");
-    });
+    fetchData(Movies_Gernes_API)
+      .then((res) => {
+        setMovies_gernes(res.genres);
+        // console.log(res.genres, "response movie gernes");
+      })
+      .catch((error) => console.log(error, "Error occured"));
   }, []);
+  // console.log(movies_gernes, "state");
   return (
     <div className="">
       <Hero />
       {/* <Gallery /> */}
 
-      <Slider left={true} text="Hello"></Slider>
+      <Slider left={true} movie_id={movies_gernes[0]} text="Hello"></Slider>
       <RandomMovie />
       <FeaturedTV></FeaturedTV>
-      <Slider text="Hello again"></Slider>
+      <Slider text="Hello again" movie_id={movies_gernes[1]}></Slider>
       <Viking></Viking>
     </div>
   );
