@@ -33,10 +33,10 @@ function Main() {
       <Hero />
       {/* <Gallery /> */}
 
-      <Slider left={true} movie_id={movies_gernes[0]} text="Hello"></Slider>
+      <Slider left={true} text="Hello"></Slider>
       <RandomMovie />
       <FeaturedTV></FeaturedTV>
-      <Slider text="Hello again" movie_id={movies_gernes[1]}></Slider>
+      <Slider text="Hello again"></Slider>
       <Viking></Viking>
     </div>
   );

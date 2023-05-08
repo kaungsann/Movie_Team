@@ -9,16 +9,16 @@ function Main(props) {
   const [curr, setCurr] = useState(0);
   const [photos, setPhotos] = useState([]);
   // console.log(props.movie_id, "movie_id");
-  useEffect(() => {
-    fetchData(Movie_Lists_API(props?.movie_id?.id))
-      .then((res) => {
-        console.log(res, "slider response");
-        setPhotos(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [props?.movie_id?.id]);
+  // useEffect(() => {
+  //   fetchData(Movie_Lists_API(props?.movie_id?.id))
+  //     .then((res) => {
+  //       console.log(res, "slider response");
+  //       setPhotos(res);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, [props?.movie_id?.id]);
   // console.log(photos);
   const prev = () =>
     setCurr((curr) => (curr === 0 ? photos.length - 1 : curr - 1));
