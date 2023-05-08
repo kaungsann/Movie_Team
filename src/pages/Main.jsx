@@ -14,13 +14,13 @@ import FeaturedTV from "../components/FeaturedTV/FeaturedTV";
 import Viking from "../components/Viking/Viking";
 
 //test
-import { fetchData } from "../services/apiservices.js";
-import { Movies_Gernes_API } from "../services/Constant.js";
+import { fetchData, fetchWithAxios } from "../services/apiservices.js";
+import { Genre_Movies_list_API } from "../services/Constant.js";
 
 function Main() {
   const [movies_gernes, setMovies_gernes] = React.useState([]);
   React.useEffect(() => {
-    fetchData(Movies_Gernes_API)
+    fetchWithAxios(Genre_Movies_list_API)
       .then((res) => {
         setMovies_gernes(res.genres);
         // console.log(res.genres, "response movie gernes");
