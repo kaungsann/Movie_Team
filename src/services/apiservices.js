@@ -13,6 +13,8 @@ export const fetchWithAxios = (url) => {
   return axios.get(url, {
     headers: {
       accept: "applictaion/json",
+      authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmIzNDRmM2Y5NTg1MDk3YmUyYTJlYjRmMTY1Y2MwMiIsInN1YiI6IjY0MzdmZWNmMzdiM2E5MDBkNGZkYjhkZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3Ywz0IpsJsXdJ5eX22GYP5dlxJMNAbR3fUlCTcQKHgY",
     },
   });
 };
