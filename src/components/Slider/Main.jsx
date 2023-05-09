@@ -3,16 +3,16 @@ import Slider from "./Slider";
 import Button from "./Button";
 import styles from "./Slider.module.css";
 import { fetchWithAxios } from "../../services/apiservices.js";
-import { Movie_Detail_API } from "../../services/Constant.js";
+import { Movie_Detail_Recommend_API } from "../../services/Constant.js";
 
 function Main(props) {
   const [curr, setCurr] = useState(0);
   const [photos, setPhotos] = useState([]);
   // console.log(props.movie_id, "movie_id");
   useEffect(() => {
-    fetchWithAxios(Movie_Detail_API(props?.id))
+    fetchWithAxios(Movie_Detail_Recommend_API(props?.id))
       .then((res) => {
-        // console.log(res.data.results, "slider response");
+        // console.log(res.data, "slider response");
         setPhotos(res.data.results);
       })
       .catch((error) => {

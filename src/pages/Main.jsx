@@ -21,7 +21,7 @@ function Main() {
     fetchWithAxios(Genre_Movies_list_API)
       .then((res) => {
         setMovies_gernes(res.data.genres);
-        console.log(res.data.genres, "response movie gernes");
+        // console.log(res.data.genres, "response movie gernes");
       })
       .catch((error) => console.log(error, "Error occured"));
   }, []);

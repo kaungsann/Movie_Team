@@ -10,7 +10,7 @@ export const Genre_Movies_list_API = `${VITE_APP_DOMAIN}genre/movie/list?languag
 
 export const Genre_TV_list_API = `${VITE_APP_DOMAIN}genre/tv/list?language=en`;
 
-export const Movie_Detail_API = (id) =>
+export const Movie_Detail_Recommend_API = (id) =>
   `${VITE_APP_DOMAIN}movie/${id}/recommendations?language=en-US`;
 
 export const Popular_Movies_API = `${VITE_APP_DOMAIN}movie/popular?language=en-US&page=1`;
@@ -22,3 +22,6 @@ export const Similar_Movies_API = (id) =>
 
 export const Search_Movie_API = (query) =>
   `${VITE_APP_DOMAIN}search/movie?query=${query}?language=en-US&include_adult=false&page=1`; // query required
+
+export const Movie_Detail_API = (id) =>
+  `${VITE_APP_DOMAIN}movie/${id}?language=en-US`;

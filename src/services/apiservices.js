@@ -18,3 +18,5 @@ export const fetchWithAxios = (url) => {
     },
   });
 };
+
+export const imgUrl = `https://image.tmdb.org/t/p/w500/`;

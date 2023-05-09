@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Slider.module.css";
 import Button from "./Button";
+import { imgUrl } from "../../services/apiservices.js";
 
 function Slider(props) {
-  console.log(props.photos, "photos");
+  // console.log(props.photos, "photos");
   return (
     <div className={`overflow-hidden block`} style={{ width: "75vw" }}>
       <div
@@ -25,10 +26,7 @@ function Slider(props) {
               onClick={() => {
                 window.location.assign(`/movie-detail/${item.id}`);
               }}
-              src={
-                `
-                https://image.tmdb.org/t/p/w500/` + item?.poster_path
-              }
+              src={`${imgUrl}${item?.poster_path}`}
               alt=""
               // style={{ width: "200px", height: "250px", margin: "5px ", borderRadius: "2px" }}
               // className={styles["mobile-image"]}

@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Group, Button } from "@mantine/core";
 import { FaPlay } from "react-icons/fa";
 import ReactPlayer from "react-player";
+import { fetchWithAxios, imgUrl } from "../../services/apiservices.js";
+import { Movie_Detail_API } from "../../services/Constant.js";
+
 const RandomMovie = () => {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    fetchWithAxios(Movie_Detail_API(502356))
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
@@ -11,21 +25,29 @@ const RandomMovie = () => {
         <div
           className="w-full h-full"
           style={{
-            backgroundImage: `url("https://www.highsnobiety.com/static-assets/thumbor/jvDrYIdqmGRJjhDo37iWyFcPTxM=/1600x1067/www.highsnobiety.com/static-assets/wp-content/uploads/2015/06/30174814/most-expensive-hollywood-movies-061.jpg")`,
+            backgroundImage: `url(${imgUrl}${data?.backdrop_path})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-          }}>
+          }}
+        >
           <div className="absolute lg:top-[35%] md:top-[20%] top-[10%] px-5 lg:pl-20 2xl:pl-40 text-white space-y-10 w-full z-10 text-center lg:text-left">
             <p className="  font-bold md:text-6xl text-3xl cursor-pointer w-full lg:w-[40%] ">
-              Avengers
+              {data.title}
             </p>
             <div className="divide-x-[1px] items-center divide-gray-300 flex font-light text-sm text-gray-300 justify-center lg:justify-start">
-              <p className="md:pr-3 md:px-0 px-3 ">2017</p>
-              <p className="px-3">Comedy</p>
-              <p className="px-3">1hr 55mins</p>
+              <p className="md:pr-3 md:px-0 px-3 ">
+                {new Date(data.release_date).toLocaleDateString()}
+              </p>
+              <p className="px-3">{data.status}</p>
+              {/* <p className="px-3">1hr 55mins</p> */}
             </div>
             <div className="md:space-x-5 flex flex-col md:flex-row space-y-5 md:space-y-0 md:justify-center lg:justify-start">
-              <button className="uppercase py-3 md:py-5 px-10  text-lg bg-cyan-500 rounded-lg border border-cyan-500 hover:border-cyan-600 hover:bg-cyan-600 transition-all duration-300">
+              <button
+                onClick={() => {
+                  window.location.assign(`movie-detail${data.id}`);
+                }}
+                className="uppercase py-3 md:py-5 px-10  text-lg bg-cyan-500 rounded-lg border border-cyan-500 hover:border-cyan-600 hover:bg-cyan-600 transition-all duration-300"
+              >
                 Watch Now
               </button>
               <button className="uppercase py-3 md:py-5 px-10  text-lg  rounded-lg border border-white transition-all duration-300 hover:bg-white hover:text-black">
@@ -37,7 +59,8 @@ const RandomMovie = () => {
           <div className="absolute lg:right-0 top-[30%] pr-10 2xl:pr-40 text-white z-[15] lg:block font-light hidden ">
             <button
               className=" border p-20 rounded-full cursor-pointer border-white/50 group hover:border-white"
-              onClick={open}>
+              onClick={open}
+            >
               <FaPlay
                 size={80}
                 className="text-cyan-500 group-hover:text-cyan-300"
