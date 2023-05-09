@@ -16,7 +16,7 @@ const Viking = (props) => {
   useEffect(() => {
     fetchWithAxios(TV_Detail_API(1396))
       .then((res) => {
-        console.log(res.data, "viking");
+        // console.log(res.data, "viking");
         setData(res.data);
       })
       .catch((err) => console.log(err));
