@@ -16,6 +16,7 @@ import { fetchData, fetchWithAxios } from "../services/apiservices.js";
 import { Genre_Movies_list_API } from "../services/Constant.js";
 
 function Main() {
+  // console.log(React, "react is called at console");
   const [movies_gernes, setMovies_gernes] = React.useState([]);
   React.useEffect(() => {
     fetchWithAxios(Genre_Movies_list_API)
