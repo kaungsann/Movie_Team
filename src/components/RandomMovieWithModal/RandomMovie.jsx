@@ -44,7 +44,7 @@ const RandomMovie = () => {
             <div className="md:space-x-5 flex flex-col md:flex-row space-y-5 md:space-y-0 md:justify-center lg:justify-start">
               <button
                 onClick={() => {
-                  window.location.assign(`movie-detail${data.id}`);
+                  window.location.assign(`movie-detail/${data.id}`);
                 }}
                 className="uppercase py-3 md:py-5 px-10  text-lg bg-cyan-500 rounded-lg border border-cyan-500 hover:border-cyan-600 hover:bg-cyan-600 transition-all duration-300"
               >
