@@ -44,7 +44,7 @@ function Main() {
   }, []);
   // console.log(movies_gernes, "state");
   // console.log(movies_gernes, "movies_gernes");
-  console.log(tvGenres, "tv-genres");
+  // console.log(tvGenres, "tv-genres");
   return (
     <div className="">
       <Hero />
