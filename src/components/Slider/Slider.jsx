@@ -9,7 +9,7 @@ function Slider(props) {
     <div className={`overflow-hidden block`} style={{ width: "75vw" }}>
       <div
         className={`flex transition-transform ease-out duration-500`}
-        style={{ transform: `translateX(-${props.curr * 100}%)` }}
+        style={{ transform: `translateX(-${props.curr * 40}%)` }}
       >
         {props.photos?.map((item, index) => (
           <div
@@ -17,11 +17,15 @@ function Slider(props) {
             key={index}
             style={{ margin: "5px " }}
           >
-            <span
-              className={`bg-blue-600 text-white ml-16 p-1 absolute top-0 rounded-md`}
-            >
-              Featured
-            </span>
+            {item.popularity > 50 ? (
+              <span
+                className={`bg-blue-600 text-white ml-12 lg:ml-16 p-1 absolute top-0 rounded-md`}
+              >
+                Featured
+              </span>
+            ) : (
+              <></>
+            )}
             <img
               onClick={() => {
                 window.location.assign(`/movie-detail/${item.id}`);
