@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 
@@ -13,26 +13,41 @@ import Viking from "../components/Viking/Viking";
 
 //test
 import { fetchData, fetchWithAxios } from "../services/apiservices.js";
-import { Genre_Movies_list_API } from "../services/Constant.js";
+import {
+  Genre_Movies_list_API,
+  Genre_TV_list_API,
+} from "../services/Constant.js";
 
 function Main() {
   // console.log(React, "react is called at console");
-  const [movies_gernes, setMovies_gernes] = React.useState([]);
-  React.useEffect(() => {
+  const [movies_gernes, setMovies_gernes] = useState([]);
+  const [tvGenres, setTvGenres] = useState([]);
+  const movie = () => {
     fetchWithAxios(Genre_Movies_list_API)
       .then((res) => {
         setMovies_gernes(res.data.genres);
         // console.log(res.data.genres, "response movie gernes");
       })
       .catch((error) => console.log(error, "Error occured"));
+  };
+
+  const tv = () => {
+    fetchWithAxios(Genre_TV_list_API)
+      .then((res) => {
+        setTvGenres(res.data.genres);
+      })
+      .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    movie();
+    tv();
   }, []);
   // console.log(movies_gernes, "state");
   // console.log(movies_gernes, "movies_gernes");
+  console.log(tvGenres, "tv-genres");
   return (
     <div className="">
       <Hero />
-      {/* <Gallery /> */}
-
       <Slider
         left={true}
         id={movies_gernes[0]?.id}
@@ -41,7 +56,7 @@ function Main() {
       <RandomMovie />
       <FeaturedTV></FeaturedTV>
       <Slider text={movies_gernes[1]?.name} id={movies_gernes[1]?.id}></Slider>
-      <Viking></Viking>
+      <Viking id={tvGenres?.id}></Viking>
     </div>
   );
 }

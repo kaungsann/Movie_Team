@@ -13,6 +13,9 @@ export const Genre_TV_list_API = `${VITE_APP_DOMAIN}genre/tv/list?language=en`;
 export const Movie_Detail_Recommend_API = (id) =>
   `${VITE_APP_DOMAIN}movie/${id}/recommendations?language=en-US`;
 
+export const TV_Detail_API = (id) =>
+  `${VITE_APP_DOMAIN}tv/${id}?language=en-US`;
+
 export const Popular_Movies_API = `${VITE_APP_DOMAIN}movie/popular?language=en-US&page=1`;
 
 export const Upcoming_Movies_API = `${VITE_APP_DOMAIN}movie/upcoming?language=en-US&page=1`;
@@ -25,3 +28,5 @@ export const Search_Movie_API = (query) =>
 
 export const Movie_Detail_API = (id) =>
   `${VITE_APP_DOMAIN}movie/${id}?language=en-US`;
+
+export const Popular_TV_API = `${VITE_APP_DOMAIN}tv/top_rated?language=en-US&page=1`;
