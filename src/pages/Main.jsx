@@ -20,21 +20,26 @@ function Main() {
   React.useEffect(() => {
     fetchWithAxios(Genre_Movies_list_API)
       .then((res) => {
-        setMovies_gernes(res.genres);
-        // console.log(res.genres, "response movie gernes");
+        setMovies_gernes(res.data.genres);
+        console.log(res.data.genres, "response movie gernes");
       })
       .catch((error) => console.log(error, "Error occured"));
   }, []);
   // console.log(movies_gernes, "state");
+  // console.log(movies_gernes, "movies_gernes");
   return (
     <div className="">
       <Hero />
       {/* <Gallery /> */}
 
-      <Slider left={true} text="Hello"></Slider>
+      <Slider
+        left={true}
+        id={movies_gernes[0]?.id}
+        text={movies_gernes[0]?.name}
+      ></Slider>
       <RandomMovie />
       <FeaturedTV></FeaturedTV>
-      <Slider text="Hello again"></Slider>
+      <Slider text={movies_gernes[1]?.name} id={movies_gernes[1]?.id}></Slider>
       <Viking></Viking>
     </div>
   );

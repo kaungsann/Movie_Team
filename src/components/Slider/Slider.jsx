@@ -3,13 +3,14 @@ import styles from "./Slider.module.css";
 import Button from "./Button";
 
 function Slider(props) {
+  console.log(props.photos, "photos");
   return (
     <div className={`overflow-hidden block`} style={{ width: "75vw" }}>
       <div
         className={`flex transition-transform ease-out duration-500`}
         style={{ transform: `translateX(-${props.curr * 100}%)` }}
       >
-        {/* {props.photos?.map((item, index) => (
+        {props.photos?.map((item, index) => (
           <div
             className={styles["mobile-image"]}
             key={index}
@@ -22,17 +23,20 @@ function Slider(props) {
             </span>
             <img
               onClick={() => {
-                window.location.assign(`/movie-detail/1`);
+                window.location.assign(`/movie-detail/${item.id}`);
               }}
-              src={item?.download_url}
+              src={
+                `
+                https://image.tmdb.org/t/p/w500/` + item?.poster_path
+              }
               alt=""
               // style={{ width: "200px", height: "250px", margin: "5px ", borderRadius: "2px" }}
               // className={styles["mobile-image"]}
             />
-            <p className={`text-teal-500`}>text</p>
-            <p>Hello</p>
+            <p className={`text-teal-500`}>{item.title}</p>
+            <p className={`text-sm`}>popularity : {item.popularity}</p>
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );

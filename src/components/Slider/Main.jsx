@@ -2,23 +2,23 @@ import React, { useState, useEffect } from "react";
 import Slider from "./Slider";
 import Button from "./Button";
 import styles from "./Slider.module.css";
-import { fetchData } from "../../services/apiservices.js";
-import { Movie_Lists_API } from "../../services/Constant.js";
+import { fetchWithAxios } from "../../services/apiservices.js";
+import { Movie_Detail_API } from "../../services/Constant.js";
 
 function Main(props) {
   const [curr, setCurr] = useState(0);
   const [photos, setPhotos] = useState([]);
   // console.log(props.movie_id, "movie_id");
-  // useEffect(() => {
-  //   fetchData(Movie_Lists_API(props?.movie_id?.id))
-  //     .then((res) => {
-  //       console.log(res, "slider response");
-  //       setPhotos(res);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, [props?.movie_id?.id]);
+  useEffect(() => {
+    fetchWithAxios(Movie_Detail_API(props?.id))
+      .then((res) => {
+        // console.log(res.data.results, "slider response");
+        setPhotos(res.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [props?.id]);
   // console.log(photos);
   const prev = () =>
     setCurr((curr) => (curr === 0 ? photos.length - 1 : curr - 1));

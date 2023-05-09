@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./MovieCategory.css";
 import TopfiveList from "./TopfiveList";
-import request from "../../services/Constant";
+// import request from "../../services/Constant";
 import axios from "axios";
 import { Rate } from "antd";
+
 function MovieCategory() {
   const [year, setYear] = useState("2023");
   const [tops, setTop] = useState([]);

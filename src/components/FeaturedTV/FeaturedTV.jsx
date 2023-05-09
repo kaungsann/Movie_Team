@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import MovieSliderItem from "./MovieSliderItem";
 import axios from "axios";
-import request, {
-  Movies_Gernes_API,
-  Movie_Lists_API,
-} from "../../services/Constant.js";
+// import request from // Movies_Gernes_API,
+// // Movie_Lists_API,
+// "../../services/Constant.js";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 import TopList from "./TopList";
 import NewMove from "./NewMove";
@@ -16,28 +15,28 @@ const FeaturedTV = () => {
   const [news, setNews] = useState([]);
   const sliderRef = useRef(null);
 
-  useEffect(() => {
-    axios
-      .get(request.featured)
-      .then((res) => {
-        setMovies(res.data.slice(0, 10)); // get the first 10 items
-      })
-      .catch((err) => console.error(err));
+  // useEffect(() => {
+  //   axios
+  //     .get(request.featured)
+  //     .then((res) => {
+  //       setMovies(res.data.slice(0, 10)); // get the first 10 items
+  //     })
+  //     .catch((err) => console.error(err));
 
-    axios
-      .get(request.top9)
-      .then((res) => {
-        setTop(res.data.slice(0, 10)); // get the first 10 items
-      })
-      .catch((err) => console.error(err));
+  //   axios
+  //     .get(request.top9)
+  //     .then((res) => {
+  //       setTop(res.data.slice(0, 10)); // get the first 10 items
+  //     })
+  //     .catch((err) => console.error(err));
 
-    axios
-      .get(request.newTest)
-      .then((res) => {
-        setNews(res.data.slice(0, 10)); // get the first 10 items
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  //   axios
+  //     .get(request.newTest)
+  //     .then((res) => {
+  //       setNews(res.data.slice(0, 10)); // get the first 10 items
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
   const scrollLeft = () => {
     sliderRef.current.scrollLeft -= 500;
   };
@@ -54,9 +53,9 @@ const FeaturedTV = () => {
           ref={sliderRef}
         >
           <div className="flex   gap-5 flex-row justify-start items-center ">
-            {movies.map((movie) => {
+            {/* {movies.map((movie) => {
               return <MovieSliderItem key={movie.id} title={movie.username} />;
-            })}
+            })} */}
           </div>
         </div>
         <div className="flex w-full lg:xl:2xl:md:w-2/5 h-[100px] lg:xl:md:2xl:h-[200px] pl-[1rem]  flex-col justify-center items-center lg:2xl:xl:md:items-start">
@@ -82,7 +81,7 @@ const FeaturedTV = () => {
               <div>TV Series</div>
             </div>
           </div>
-          {tops.map((top, index) => {
+          {/* {tops.map((top, index) => {
             return (
               <div
                 key={index}
@@ -93,7 +92,7 @@ const FeaturedTV = () => {
                 <TopList list={top.id} />
               </div>
             );
-          })}
+          })} */}
         </div>
         <div className="flex flex-col  mr-[100px] justify-center items-start">
           <div className="flex h-[88px] flex-row justify-between w-full items-center">
@@ -105,7 +104,7 @@ const FeaturedTV = () => {
             </div>
           </div>
           <div>
-            {news.map((news) => {
+            {/* {news.map((news) => {
               return (
                 <div>
                   {news.id === 1 ? (
@@ -137,10 +136,10 @@ const FeaturedTV = () => {
                   )}
                 </div>
               );
-            })}
+            })} */}
           </div>
           <div className=" grid lg:xl:2xl:md:grid-cols-2 sm:grid-cols-1  grid-rows-5 gap-4  ">
-            {news.map((news, index) => {
+            {/* {news.map((news, index) => {
               return (
                 <div
                   key={index}
@@ -151,7 +150,7 @@ const FeaturedTV = () => {
                   <NewMove />
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>
