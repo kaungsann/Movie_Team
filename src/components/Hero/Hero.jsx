@@ -100,11 +100,13 @@ function IndicatorGrid() {
 
 function Hero() {
   const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
   useEffect(() => {
     fetchWithAxios(Movies_list_API)
       .then((res) => {
         // console.log(res.data, "hero section");
         setData(res.data.results.slice(0, 6));
+        setData1(res.data.results.reverse().slice(0, 6));
       })
       .catch((err) => console.log(err));
   }, []);
@@ -138,8 +140,9 @@ function Hero() {
       <div className="absolute right-0 top-[20%] pr-10 2xl:pr-40 text-white hidden lg:block font-light">
         <p className="text-3xl">Today's Recommendations</p>
         <div className="grid grid-cols-3 gap-3 mt-4">
-          {data.map((el) => (
+          {data1.map((el) => (
             <img
+              onClick={() => window.location.assign(`/movie-detail/${el.id}`)}
               key={el.id}
               src={`${imgUrl}${el?.backdrop_path}`}
               width="214px"
@@ -152,8 +155,9 @@ function Hero() {
       <div className="absolute left-[10%] right-[10%] top-[65%]  text-white hidden md:block lg:hidden font-light">
         <p className="text-3xl">Today's Recommendations</p>
         <div className="grid grid-cols-3 gap-3 mt-4">
-          {data.slice(0, 3).map((el) => (
+          {data1.slice(0, 3).map((el) => (
             <img
+              onClick={() => window.location.assign(`/movie-detail/${el.id}`)}
               key={el.id}
               src={`${imgUrl}${el?.backdrop_path}`}
               width="214px"
