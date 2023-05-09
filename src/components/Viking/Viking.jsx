@@ -26,8 +26,8 @@ const Viking = (props) => {
     <>
       <div
         style={{
-          backgroundImage: `url('https://demo3.madrasthemes.com/vodi-demos/main/wp-content/uploads/sites/2/2019/04/ep-bg.jpg')`,
-          backgroundSize: "cover",
+          backgroundImage: `url(${imgUrl}${data?.backdrop_path})`,
+          backgroundSize: "fit",
           backgroundPosition: "center",
           minHeight: "550px",
         }}
