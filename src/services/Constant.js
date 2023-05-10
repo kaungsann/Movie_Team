@@ -27,7 +27,7 @@ export const Similar_Movies_API = (id) =>
   `${VITE_APP_DOMAIN}movie/${id}/similar?language=en-US&page=1`;
 
 export const Search_Movie_API = (query) =>
-  `${VITE_APP_DOMAIN}search/movie?query=${query}?language=en-US&include_adult=false&page=1`; // query required
+  `${VITE_APP_DOMAIN}search/movie?query=${query}&language=en-US&include_adult=false&page=1`; // query required
 
 export const Movie_Detail_API = (id) =>
   `${VITE_APP_DOMAIN}movie/${id}?language=en-US`;

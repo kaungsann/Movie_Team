@@ -1,12 +1,39 @@
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { RxCross1 } from "react-icons/rx";
+import { fetchWithAxios } from "../../../services/apiservices.js";
+import { Search_Movie_API } from "../../../services/Constant.js";
+
 const Search = () => {
   const [input, setInput] = useState("");
+  const searchMovie = (e) => {
+    e.preventDefault();
+    if (input !== "") {
+      console.log(input);
+      fetchWithAxios(Search_Movie_API(input))
+        .then((res) => {
+          if (res?.data?.results?.length !== 0) {
+            console.log(res.data.results[0]);
+            setInput("");
+            window.location.assign(`movie-detail/${res?.data?.results[0]?.id}`);
+          } else if (res?.data?.results?.length === 0) {
+            alert("Sorry can't find movie that you enter :" + input);
+            setInput("");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          setInput("");
+        });
+    } else {
+      alert("please enter search keywords");
+    }
+  };
   return (
     <form
-      onSubmit={(e) => e.preventDefault()}
-      className="md:w-[300px] w-[250px] px-4 mx-auto">
+      onSubmit={searchMovie}
+      className="md:w-[300px] w-[250px] px-4 mx-auto"
+    >
       <div className="relative">
         <input
           type="text"
