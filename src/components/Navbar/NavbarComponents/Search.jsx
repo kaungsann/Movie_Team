@@ -9,11 +9,11 @@ const Search = () => {
   const searchMovie = (e) => {
     e.preventDefault();
     if (input !== "") {
-      console.log(input);
+      // console.log(input);
       fetchWithAxios(Search_Movie_API(input))
         .then((res) => {
           if (res?.data?.results?.length !== 0) {
-            console.log(res.data.results[0]);
+            // console.log(res.data.results[0]);
             setInput("");
             window.location.assign(`movie-detail/${res?.data?.results[0]?.id}`);
           } else if (res?.data?.results?.length === 0) {
