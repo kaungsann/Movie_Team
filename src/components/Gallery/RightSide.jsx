@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import TabChanger from "./TabChanger";
 import MoviesContainer from "./MoviesContainer";
 import Pagination from "./Pagination";
+import { fetchWithAxios } from "../../services/apiservices.js";
 
 const RightSide = () => {
+  const { VITE_APP_DOMAIN } = import.meta.env;
   const [page, setPage] = useState(1);
   const [data, setData] = useState({});
 
@@ -15,7 +17,6 @@ const RightSide = () => {
       .then((res) => {
         console.log(res.data);
         setData(res.data);
-        setTop(res.data.results);
       })
       .catch((err) => console.error(err));
   }, [page]);
@@ -23,8 +24,12 @@ const RightSide = () => {
   return (
     <div className="lg:w-[75%]">
       <h1 className="text-3xl">Action</h1>
-      <MoviesContainer />
-      <Pagination page={page} setPage={setPage} />
+      <MoviesContainer api={api} data={data?.results} />
+      <Pagination
+        total_page={data?.total_pages}
+        page={page}
+        setPage={setPage}
+      />
     </div>
   );
 };

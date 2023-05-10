@@ -5,24 +5,14 @@ import { Movies_list_API } from "../../services/Constant.js";
 import { fetchWithAxios, imgUrl } from "../../services/apiservices.js";
 import { Rate } from "antd";
 
-function MovieCategory() {
+function MovieCategory({ api }) {
   const { VITE_APP_DOMAIN } = import.meta.env;
   const [year, setYear] = useState("2023");
-  const [tops, setTop] = useState([]);
   const [page, setPage] = useState(1);
   const [data, setData] = useState({});
+  const [data1, setData1] = useState([]);
 
-  let api = `${VITE_APP_DOMAIN}discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`;
-
-  useEffect(() => {
-    fetchWithAxios(api)
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-        setTop(res.data.results);
-      })
-      .catch((err) => console.error(err));
-  }, [page]);
+  // let api = `${VITE_APP_DOMAIN}discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`;
 
   return (
     <>
@@ -150,16 +140,16 @@ function MovieCategory() {
           </div>
         </div>
         <div className="">
-          <div className=" text-white py-5 rounded-sm bg-[#1c212e] p-5">
+          {/* <div className=" text-white py-5 rounded-sm bg-[#1c212e] p-5">
             <h3 className="text-2xl font-medium border-b border-white/10 h-12 mb-3">
               Top 5 Lists
             </h3>
             <span>
-              {/* {tops.slice(0, 5).map((top) => {
-                return <TopfiveList list={top.id} />;
-              })} */}
+              {tops?.slice(0, 5)?.map((top) => {
+                return <TopfiveList key={top.id} list={top} />;
+              })}
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

@@ -1,16 +1,19 @@
 import { useState } from "react";
-import { BsArrowRight } from "react-icons/bs";
-export default ({ page, setPage }) => {
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+export default ({ page, setPage, total_page }) => {
+  console.log(page);
   const [pages, setPages] = useState(["1", "2"]);
   const [currentPage, setCurrentPage] = useState("1");
 
   return (
     <div className="max-w-screen-xl mx-auto mt-12  text-gray-600 ">
       <div className="hidden justify-between text-sm md:flex">
-        <div>Showing 1–24 of 48 results</div>
+        <div>
+          Showing {page}–20 of {total_page} results
+        </div>
         <div className="flex items-center gap-12" aria-label="Pagination">
           <ul className="flex items-center gap-1">
-            {pages.map((item, idx) => (
+            {/* {...Array(pages)?.map((item, idx) => (
               <li key={item}>
                 {item == "..." ? (
                   <div>{item}</div>
@@ -28,9 +31,19 @@ export default ({ page, setPage }) => {
                   </a>
                 )}
               </li>
-            ))}
+            ))} */}
           </ul>
-          <a className=" flex items-center cursor-pointer justify-center  gap-2">
+          <a
+            onClick={() => setPage(page - 1)}
+            className=" flex items-center cursor-pointer justify-center  gap-2"
+          >
+            Prev Page
+            <BsArrowLeft size={20} color="gray" />
+          </a>
+          <a
+            onClick={() => setPage(page + 1)}
+            className=" flex items-center cursor-pointer justify-center  gap-2"
+          >
             Next Page
             <BsArrowRight size={20} color="gray" />
           </a>
@@ -38,8 +51,13 @@ export default ({ page, setPage }) => {
       </div>
       {/* On mobile version */}
       <div className="flex items-center justify-between text-sm text-gray-600 font-medium md:hidden">
-        <div className="font-medium">Showing 1–24 of 48 results</div>
-        <a className=" flex items-center cursor-pointer justify-center  gap-2">
+        <div className="font-medium">
+          Showing {page}–20 of {total_page} results
+        </div>
+        <a
+          onClick={() => setPage(page + 1)}
+          className=" flex items-center cursor-pointer justify-center  gap-2"
+        >
           Next Page
           <BsArrowRight size={20} color="gray" />
         </a>
