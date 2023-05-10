@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BreadcrumbsCustom from "../Reusables/BreadcrumbsCustom";
 import ReactPlayer from "react-player";
 import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import Tab2 from "../Tab2/TabDe";
 import Recommend from "../Recommend/Recommend";
+import { useParams } from "react-router-dom";
+import { fetchWithAxios, imgUrl } from "../../services/apiservices.js";
+import { Movies_Detail_Videos_API } from "../../services/Constant.js";
+
 const MovieDetail = () => {
+  const [data, setData] = useState({});
+  const { id } = useParams();
+
+  const f1 = () => {
+    fetchWithAxios(Movies_Detail_Videos_API(id))
+      .then((res) => {
+        // console.log(res.data.results[0]);
+        setData(res.data.results[0]);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    f1();
+  }, []);
   const items = [
     { title: "Home", href: "#" },
     { title: "Comedy", href: "#" },
     { title: "American Made", href: "#", active: true },
   ];
-  const data = [
+  const data1 = [
     {
       img: "hello.jpg",
       id: 1,
@@ -35,7 +54,7 @@ const MovieDetail = () => {
 
         <div className=" lg:my-10 md:my-8 my-5 2xl:w-[65%] lg:w-[70%] mx-auto w-full lg:h-[550px] md:h-[368px] h-[216px]">
           <ReactPlayer
-            url={"https://www.youtube.com/watch?v=U8HKaO8qXS4"}
+            url={`https://www.youtube.com/watch?v=${data?.key}`}
             controls={true}
             width={"100%"}
             height={"100%"}
@@ -45,13 +64,17 @@ const MovieDetail = () => {
         <div className="flex lg:justify-between lg:items-center lg:flex-row flex-col gap-5 lg:gap-0 ">
           <div>
             <p className=" font-medium md:text-3xl text-2xl cursor-pointer w-full  text-white mb-3 ">
-              American Made
+              {data?.name}
             </p>
             <div className="divide-x-[1px] items-center divide-gray-300 flex font-light text-md text-gray-300 ">
-              <p className="pr-3 ">2017</p>
-              <p className="px-3">1hr 55 mins</p>
-              <p className="px-3">R</p>
-              <p className="px-3 cursor-pointer text-cyan-500">Comedy</p>
+              <p className="pr-3 ">
+                {new Date(data?.published_at).toLocaleDateString()}
+              </p>
+              <p className="px-3">resolution : {data?.size}p</p>
+              <p className="px-3">
+                {data?.official === true ? "Official" : "Un-Official"}
+              </p>
+              <p className="px-3 cursor-pointer text-cyan-500">{data?.type}</p>
             </div>
           </div>
           <div className="text-gray-500 flex items-center gap-3 md:gap-10">
@@ -69,8 +92,8 @@ const MovieDetail = () => {
           </div>
         </div>
       </section>
-      <Tab2></Tab2>
-      <Recommend data={data} />
+      <Tab2 id={id}></Tab2>
+      <Recommend id={id} />
     </>
   );
 };

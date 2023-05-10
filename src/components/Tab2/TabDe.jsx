@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { fetchWithAxios, imgUrl } from "../../services/apiservices.js";
+import { Movie_Detail_API } from "../../services/Constant.js";
 import "./TabDe.css";
 import img from "../img/images.jpeg";
-function TabDe() {
+
+function TabDe({ id }) {
   const [showText, setShowText] = useState(true);
   const [selectedText, setSelectedText] = useState(true);
   const [color1, setColor1] = useState("#f5f5f5");
   const [color2, setColor2] = useState("#f5f5f5");
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    fetchWithAxios(Movie_Detail_API(id))
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   function handleClick() {
     setShowText(true);
     setSelectedText(true);
@@ -55,22 +69,22 @@ function TabDe() {
         {showText && (
           <div className="  lg-flex md:flex mt-10 md:justify-start md:mx-auto boxContainer  sm:flex sm:flex-wrap sm:justify-start">
             <img
-              src={img}
+              src={`${imgUrl}${data?.poster_path}`}
               className="xl-flex lg:w-3/12 ml-10 rounded-md shadow-md  md:w-6/12 sm:w-96 sm:h-96 sm:rounded-xl"
             />
             <div className="ml-14 sm:mt-8">
               <h1 className="lg:text-3xl font-semibold md:text-3xl sm:text-3xl text-2xl">
-                The Big Sick
+                {data?.title}
               </h1>
               <div className="flex my-7 items-center  md:flex-wrap md:justify-start sm:flex-wrap ">
                 <div className="startbox flex w-30">
                   <span className="icon-star lg:text-5xl md:text-4xl sm:text-4xl text-4xl text-cyan-400  "></span>
                   <div className=" ml-3">
                     <h2 className="lg:text-4xl md:text-3xl sm:text-3xl text-3xl text-cyan-400 ">
-                      5.0
+                      {data?.vote_average}
                     </h2>
                     <span className="text-slate-500 sm:w-30  mt-3  sm:flex">
-                      1 vote
+                      {data?.vote_count} vote
                     </span>
                   </div>
                 </div>
@@ -80,20 +94,18 @@ function TabDe() {
                 </div>
                 <div className="tagBox flex lg:ml-14 text-right text-xl w-100 md:mt-8 sm:mt-10 md:text-xl sm:text-lg  ">
                   <span>Tag</span>
-                  <div className="ml-4 text-cyan-400">
-                    4K Ultra, King, Premieres, viking
-                  </div>
+                  <div className="ml-4 text-cyan-400">{data?.tagline}</div>
                 </div>
               </div>
 
               <div className="flex mt-8 md:flex-wrap mb-3 sm:flex sm:flex-wrap ">
                 <div className=" text-xl md:mb-10 sm:mb-8 sm:text-left ">
-                  <span>2017 | hr 00mins | R |</span>
+                  <span>
+                    {new Date(data?.release_date).toLocaleDateString()}| R |
+                  </span>
                 </div>
                 <div className="text-cyan-400 flex  text-xl lg:ml-14 md:ml-10">
-                  <span className="">Adventure</span>
-                  <span className="">Comedy</span>
-                  <span className="">Romance</span>
+                  <a href={data?.homepage}>Go to movie</a>
                 </div>
               </div>
               <div className="flex text-lg align-middle text-slate-300 mt-10">

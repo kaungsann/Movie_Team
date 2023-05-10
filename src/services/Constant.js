@@ -13,6 +13,9 @@ export const Genre_TV_list_API = `${VITE_APP_DOMAIN}genre/tv/list?language=en`;
 export const Movie_Detail_Recommend_API = (id) =>
   `${VITE_APP_DOMAIN}movie/${id}/recommendations?language=en-US`;
 
+export const Movies_Detail_Videos_API = (id) =>
+  `${VITE_APP_DOMAIN}movie/${id}/videos?language=en-US`;
+
 export const TV_Detail_API = (id) =>
   `${VITE_APP_DOMAIN}tv/${id}?language=en-US`;
 
