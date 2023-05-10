@@ -9,7 +9,17 @@ export default ({ page, setPage, total_page }) => {
     <div className="max-w-screen-xl mx-auto mt-12  text-gray-600 ">
       <div className="hidden justify-between text-sm md:flex">
         <div>
-          Showing {page}– {total_page} results
+          Showing{" "}
+          <input
+            style={{ width: "100px" }}
+            maxlength={total_page}
+            type="number"
+            value={page}
+            onChange={(e) => {
+              setPage(e.target.value);
+            }}
+          />{" "}
+          – {total_page} results
         </div>
         <div className="flex items-center gap-12" aria-label="Pagination">
           <ul className="flex items-center gap-1">
@@ -34,7 +44,13 @@ export default ({ page, setPage, total_page }) => {
             ))} */}
           </ul>
           <a
-            onClick={() => setPage(page - 1)}
+            onClick={() => {
+              if (page <= 1) {
+                setPages(1);
+              } else {
+                setPage(page - 1);
+              }
+            }}
             className=" flex items-center cursor-pointer justify-center  gap-2"
           >
             Prev Page
@@ -52,7 +68,23 @@ export default ({ page, setPage, total_page }) => {
       {/* On mobile version */}
       <div className="flex items-center justify-between text-sm text-gray-600 font-medium md:hidden">
         <div className="font-medium">
-          Showing {page}–{total_page} results
+          Showing{" "}
+          <input
+            style={{ width: "100px" }}
+            maxlength={total_page}
+            type="number"
+            value={page}
+            onChange={(e) => {
+              if (Number(e.target.value) > 1) {
+                setPage(Number(e.target.value));
+              } else if (Number(e.target.value) >= total_page) {
+                setPage(total_page);
+              } else {
+                setPage(1);
+              }
+            }}
+          />
+          –{total_page} results
         </div>
         <a
           onClick={() => {
