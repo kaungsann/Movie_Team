@@ -83,8 +83,8 @@ export default ({ page, setPage, total_page }) => {
                 setPage(1);
               }
             }}
-          />
-          –{total_page} results
+          />{" "}
+          – {total_page} results
         </div>
         <a
           onClick={() => {
