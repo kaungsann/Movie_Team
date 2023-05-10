@@ -8,6 +8,7 @@
   font-size: 1.7rem;
   font-weight: 500;
   transition: 0.4s all ease-in-out;
+  z-index: 1000;
 }
 .btnTop:hover {
   cursor: pointer;
