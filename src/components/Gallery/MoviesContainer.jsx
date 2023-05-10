@@ -12,7 +12,6 @@ const MoviesContainer = ({ api, data }) => {
   const [displayStyle, setDisplayStyle] = useState("display0");
   const notDisplay1or2 =
     displayStyle !== "display0" && displayStyle !== "display1";
-  // console.log(displayStyle);
   React.useEffect(() => {
     setTops(data);
   }, [data]);

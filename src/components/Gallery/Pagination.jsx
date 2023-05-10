@@ -55,6 +55,19 @@ export default ({ page, setPage, total_page }) => {
           Showing {page}–20 of {total_page} results
         </div>
         <a
+          onClick={() => {
+            if (page <= 1) {
+              setPages(1);
+            } else {
+              setPage(page - 1);
+            }
+          }}
+          className=" flex items-center cursor-pointer justify-center  gap-2"
+        >
+          Prev Page
+          <BsArrowLeft size={20} color="gray" />
+        </a>
+        <a
           onClick={() => setPage(page + 1)}
           className=" flex items-center cursor-pointer justify-center  gap-2"
         >
