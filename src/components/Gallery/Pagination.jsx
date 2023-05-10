@@ -9,7 +9,7 @@ export default ({ page, setPage, total_page }) => {
     <div className="max-w-screen-xl mx-auto mt-12  text-gray-600 ">
       <div className="hidden justify-between text-sm md:flex">
         <div>
-          Showing {page}–20 of {total_page} results
+          Showing {page}– {total_page} results
         </div>
         <div className="flex items-center gap-12" aria-label="Pagination">
           <ul className="flex items-center gap-1">
@@ -52,7 +52,7 @@ export default ({ page, setPage, total_page }) => {
       {/* On mobile version */}
       <div className="flex items-center justify-between text-sm text-gray-600 font-medium md:hidden">
         <div className="font-medium">
-          Showing {page}–20 of {total_page} results
+          Showing {page}–{total_page} results
         </div>
         <a
           onClick={() => {
