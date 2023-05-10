@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
-export default () => {
+export default ({ page, setPage }) => {
   const [pages, setPages] = useState(["1", "2"]);
   const [currentPage, setCurrentPage] = useState("1");
 
@@ -22,7 +22,8 @@ export default () => {
                       currentPage == item
                         ? "bg-cyan-500 text-black font-medium"
                         : "bg-gray-600 text-white"
-                    }`}>
+                    }`}
+                  >
                     {item}
                   </a>
                 )}

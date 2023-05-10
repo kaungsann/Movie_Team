@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from "react";
 import "./MovieCategory.css";
 import TopfiveList from "./TopfiveList";
-// import request from "../../services/Constant";
-import axios from "axios";
+import { Movies_list_API } from "../../services/Constant.js";
+import { fetchWithAxios, imgUrl } from "../../services/apiservices.js";
 import { Rate } from "antd";
 
 function MovieCategory() {
+  const { VITE_APP_DOMAIN } = import.meta.env;
   const [year, setYear] = useState("2023");
   const [tops, setTop] = useState([]);
+  const [page, setPage] = useState(1);
+  const [data, setData] = useState({});
+
+  let api = `${VITE_APP_DOMAIN}discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`;
 
   useEffect(() => {
-    axios
-      .get(request.top5)
+    fetchWithAxios(api)
       .then((res) => {
-        setTop(res.data);
+        console.log(res.data);
+        setData(res.data);
+        setTop(res.data.results);
       })
       .catch((err) => console.error(err));
-  });
+  }, [page]);
+
   return (
     <>
       <div className=" bg-[#1c212e] lg:bg-transparent">
@@ -148,9 +155,9 @@ function MovieCategory() {
               Top 5 Lists
             </h3>
             <span>
-              {tops.slice(0, 5).map((top) => {
+              {/* {tops.slice(0, 5).map((top) => {
                 return <TopfiveList list={top.id} />;
-              })}
+              })} */}
             </span>
           </div>
         </div>
