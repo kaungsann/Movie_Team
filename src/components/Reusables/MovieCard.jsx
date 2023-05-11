@@ -110,7 +110,7 @@ const MovieCard = ({ displayStyle, notDisplay1or2, img, data }) => {
                     window.location.assign(`/movie-detail/${data.id}`);
                   }}
                   className={`cursor-pointer ${
-                    displayStyle !== "display2" && "flex gap-2"
+                    displayStyle !== "display2" && " items-center flex gap-2"
                   }`}
                 >
                   <div className="relative group-hover:text-cyan-500">
@@ -120,9 +120,8 @@ const MovieCard = ({ displayStyle, notDisplay1or2, img, data }) => {
                     </p>
                   </div>
                   <div className="text-sm">
-                    <p className=""></p>
+                    <p className="">{data?.vote_count}Vote</p>
                   </div>
-                  <p>{data?.vote_count}Vote</p>
                 </div>
               </div>
             )}
@@ -134,20 +133,19 @@ const MovieCard = ({ displayStyle, notDisplay1or2, img, data }) => {
           }`}
         >
           <div
-            className={`cursor-pointer ${
-              displayStyle !== "display2" && "flex gap-2"
+            className={`cursor-pointer flex flex-col items-center ${
+              displayStyle !== "display2" && " flex-row gap-2"
             }`}
           >
-            <div className="relative group-hover:text-cyan-500">
+            <div className="relative group-hover:text-cyan-500 mx-auto">
               <AiFillStar className=" text-5xl" />
               <p className=" text-sm font-semibold group-hover:text-blue-900 text-gray-200 absolute top-[50%] right-[50%] translate-x-[50%] translate-y-[-50%]">
                 {data?.vote_average}
               </p>
             </div>
             <div className="text-sm">
-              <p className=""></p>
+              <p className="">{data?.vote_count}Votes</p>
             </div>
-            <p>{data?.vote_count}Votes</p>
           </div>
         </div>
       </div>
