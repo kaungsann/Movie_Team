@@ -30,7 +30,7 @@ function Recommend({ id }) {
               alt={item?.title}
             />
             <button
-              className={`absolute w-11/12 border-2 border-white bg-transparent hover:bg-white hover:text-black text-white `}
+              className={`absolute w-11/12 border-2 border-lime-600 bg-transparent hover:bg-lime-500 hover:text-white text-lime-600 font-bold `}
               onClick={() => window.location.assign(`${item?.id}`)}
             >
               View
