@@ -20,11 +20,31 @@ function Main(props) {
       });
   }, [props?.id]);
   // console.log(photos);
-  const prev = () =>
-    setCurr((curr) => (curr === 0 ? photos.length - 1 : curr - 1));
+  setTimeout(() => {
+    next();
+  }, 3000);
+  const prev = () => {
+    if (window.innerWidth <= 820) {
+      console.log(window.innerWidth <= 820);
+      setCurr((curr) => (curr === 0 ? 10 - 1 : curr - 1));
+    } else if (window.innerWidth <= 576) {
+      console.log(window.innerWidth <= 576);
+      setCurr((curr) => (curr === 0 ? photos.length - 1 : curr - 1));
+    } else {
+      setCurr((curr) => (curr === 0 ? 5 - 1 : curr - 1));
+    }
+  };
 
-  const next = () =>
-    setCurr((curr) => (curr === photos.length - 1 ? 0 : curr + 1));
+  const next = () => {
+    if (window.innerWidth <= 820) {
+      setCurr((curr) => (curr === 0 ? 10 - 1 : curr + 1));
+    } else if (window.innerWidth <= 576) {
+      setCurr((curr) => (curr === 0 ? photos.length - 1 : curr + 1));
+    } else {
+      setCurr((curr) => (curr === 0 ? 5 - 1 : curr + 1));
+    }
+  };
+
   return (
     <div
       className={`flex items-center flex-row  max-[820px]:flex-col-reverse bg-slate-900 text-white py-5 pl-3 ${
