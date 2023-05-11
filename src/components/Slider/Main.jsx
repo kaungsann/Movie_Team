@@ -29,7 +29,7 @@ function Main(props) {
       setCurr((curr) => (curr === 0 ? 10 - 1 : curr - 1));
     } else if (window.innerWidth <= 576) {
       console.log(window.innerWidth <= 576);
-      setCurr((curr) => (curr === 0 ? photos.length - 1 : curr - 1));
+      setCurr((curr) => (curr === 0 ? 20 - 1 : curr - 1));
     } else {
       setCurr((curr) => (curr === 0 ? 5 - 1 : curr - 1));
     }
@@ -39,7 +39,7 @@ function Main(props) {
     if (window.innerWidth <= 820) {
       setCurr((curr) => (curr === 0 ? 10 - 1 : curr + 1));
     } else if (window.innerWidth <= 576) {
-      setCurr((curr) => (curr === 0 ? photos.length - 1 : curr + 1));
+      setCurr((curr) => (curr === 0 ? 20 - 1 : curr + 1));
     } else {
       setCurr((curr) => (curr === 0 ? 5 - 1 : curr + 1));
     }
