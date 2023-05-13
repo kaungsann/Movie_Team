@@ -96,14 +96,14 @@ export default ({ page, setPage, total_page }) => {
           }}
           className=" flex items-center cursor-pointer justify-center  gap-2"
         >
-          Prev Page
           <BsArrowLeft size={20} color="gray" />
+          Prev
         </a>
         <a
           onClick={() => setPage(page + 1)}
           className=" flex items-center cursor-pointer justify-center  gap-2"
         >
-          Next Page
+          Next
           <BsArrowRight size={20} color="gray" />
         </a>
       </div>
