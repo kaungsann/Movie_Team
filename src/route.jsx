@@ -20,24 +20,22 @@ import Loading from "./pages/Loading";
 import Error from "./pages/Error";
 function View() {
   return (
-    <Suspense fallback={<Loading />}>
-      <Routes>
-        <Route exact index path="/" element={<MainPage />}></Route>
+    <Routes>
+      <Route exact index path="/" element={<MainPage />}></Route>
 
-        <Route exact path="/popular" element={<PopularPage />}></Route>
-        <Route path="/movie-detail/:id" element={<MovieDetail />}></Route>
+      <Route exact path="/popular" element={<PopularPage />}></Route>
+      <Route path="/movie-detail/:id" element={<MovieDetail />}></Route>
 
-        <Route path="/movie-category" element={<MovieCategory />}></Route>
+      <Route path="/movie-category" element={<MovieCategory />}></Route>
 
-        <Route path="/contact" element={<Contact />}></Route>
+      <Route path="/contact" element={<Contact />}></Route>
 
-        <Route path="/signin" element={<SignIn />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/gallery" element={<Gallery />}></Route>
-        {/* <Route path="/loading" element={<Loading />} /> */}
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </Suspense>
+      <Route path="/signin" element={<SignIn />}></Route>
+      <Route path="/register" element={<Register />}></Route>
+      <Route path="/gallery" element={<Gallery />}></Route>
+      {/* <Route path="/loading" element={<Loading />} /> */}
+      <Route path="*" element={<Error />} />
+    </Routes>
   );
 }
 

@@ -11,6 +11,8 @@ import Slider from "../components/Slider/Main";
 import FeaturedTV from "../components/FeaturedTV/FeaturedTV";
 import Viking from "../components/Viking/Viking";
 
+import Loading from "./Loading";
+
 //test
 import { fetchData, fetchWithAxios } from "../services/apiservices.js";
 import {
@@ -19,6 +21,10 @@ import {
 } from "../services/Constant.js";
 
 function Main() {
+  const [loading, setLoading] = useState(true);
+  setTimeout(() => {
+    setLoading(false);
+  }, 3000);
   // console.log(React, "react is called at console");
   const [movies_gernes, setMovies_gernes] = useState([]);
   const [tvGenres, setTvGenres] = useState([]);
@@ -45,7 +51,9 @@ function Main() {
   // console.log(movies_gernes, "state");
   // console.log(movies_gernes, "movies_gernes");
   // console.log(tvGenres, "tv-genres");
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <div className="">
       <Hero />
       <Slider
