@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import MainPage from "./pages/Main";
 import PopularPage from "./components/Popular/Popular";
 import MovieDetail from "./components/MovieDetail/MovieDetail";
+import TVDetail from "./components/MovieDetail/TvDetail";
 import SignIn from "./pages/Login";
 import Register from "./pages/Register";
 import Gallery from "./components/Gallery/Gallery";
@@ -25,6 +26,7 @@ function View() {
 
       <Route exact path="/popular" element={<PopularPage />}></Route>
       <Route path="/movie-detail/:id" element={<MovieDetail />}></Route>
+      <Route path="/tv-detail/:id" element={<TVDetail />}></Route>
 
       <Route path="/movie-category" element={<MovieCategory />}></Route>
 

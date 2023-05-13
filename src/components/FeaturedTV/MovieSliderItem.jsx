@@ -4,9 +4,9 @@ import { imgUrl } from "../../services/apiservices.js";
 const MovieSliderItem = ({ data }) => {
   return (
     <div
-      // onClick={() => {
-      //   window.location.assign(`/movie-detail/${data.id}`);
-      // }}
+      onClick={() => {
+        window.location.assign(`/tv-detail/${data.id}`);
+      }}
       className="flex flex-col   justify-center cursor-pointer items-start"
     >
       <a className="lg:xl:2xl:md:w-[230px] w-[100px] h-[55px] lg:xl:2xl:md:h-[130px] bg-gray-500">

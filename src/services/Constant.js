@@ -35,3 +35,6 @@ export const Movie_Detail_API = (id) =>
 export const Popular_TV_API = `${VITE_APP_DOMAIN}tv/top_rated?language=en-US&page=1`;
 
 export const OnTheAirAPI = `${VITE_APP_DOMAIN}tv/on_the_air?language=en-US&page=1`;
+
+export const TV_Detail_Video_API = (id) =>
+  `${VITE_APP_DOMAIN}tv/${id}/videos?language=en-US`;
