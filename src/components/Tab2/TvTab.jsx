@@ -4,7 +4,7 @@ import { TV_Detail_API } from "../../services/Constant.js";
 import "./TabDe.css";
 import img from "../img/images.jpeg";
 
-function TabDe({ id }) {
+function TvTab({ id }) {
   const [showText, setShowText] = useState(true);
   const [selectedText, setSelectedText] = useState(true);
   const [color1, setColor1] = useState("#f5f5f5");
@@ -169,4 +169,4 @@ function TabDe({ id }) {
   );
 }
 
-export default TabDe;
+export default TvTab;
