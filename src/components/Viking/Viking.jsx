@@ -27,8 +27,9 @@ const Viking = (props) => {
       <div
         style={{
           backgroundImage: `url(${imgUrl}${data?.backdrop_path})`,
-          backgroundSize: "fit",
+          backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           minHeight: "550px",
         }}
         className="md:h-auto "
