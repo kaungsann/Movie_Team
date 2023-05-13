@@ -88,7 +88,7 @@ const Footer = () => {
       </div>
       <div className="h-[60px] px-[3rem] text-sm bg-black text-white  w-full flex flex-row justify-between items-center">
         <div className="opacity-[.6]">
-          Copyright © {new Date().getFullYear()}, Vodi. All Rights Reserved
+          Copyright © {new Date().getFullYear()}, YTD Team. All Rights Reserved
         </div>
         <div className="opacity-[.6]">Privacy Policy</div>
       </div>
