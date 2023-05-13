@@ -1,0 +1,4 @@
+.navBar{
+  width: 100vw !important;
+  transition: 0.5s all ease-in;
+}
