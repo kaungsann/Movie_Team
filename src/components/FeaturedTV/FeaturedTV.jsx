@@ -8,6 +8,7 @@ import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 import TopList from "./TopList";
 import NewMove from "./NewMove";
 import { fetchWithAxios } from "../../services/apiservices.js";
+import { OnTheAirAPI } from "../../services/Constant.js";
 
 const FeaturedTV = () => {
   const [movies, setMovies] = useState([]);
@@ -15,28 +16,34 @@ const FeaturedTV = () => {
   const [news, setNews] = useState([]);
   const sliderRef = useRef(null);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(request.featured)
-  //     .then((res) => {
-  //       setMovies(res.data.slice(0, 10)); // get the first 10 items
-  //     })
-  //     .catch((err) => console.error(err));
+  useEffect(() => {
+    fetchWithAxios(OnTheAirAPI)
+      .then((res) => {
+        console.log(res.data.results);
+        setMovies(res.data.results);
+      })
+      .catch((error) => console.log(error));
+    //   axios
+    //     .get(request.featured)
+    //     .then((res) => {
+    //       setMovies(res.data.slice(0, 10)); // get the first 10 items
+    //     })
+    //     .catch((err) => console.error(err));
 
-  //   axios
-  //     .get(request.top9)
-  //     .then((res) => {
-  //       setTop(res.data.slice(0, 10)); // get the first 10 items
-  //     })
-  //     .catch((err) => console.error(err));
+    //   axios
+    //     .get(request.top9)
+    //     .then((res) => {
+    //       setTop(res.data.slice(0, 10)); // get the first 10 items
+    //     })
+    //     .catch((err) => console.error(err));
 
-  //   axios
-  //     .get(request.newTest)
-  //     .then((res) => {
-  //       setNews(res.data.slice(0, 10)); // get the first 10 items
-  //     })
-  //     .catch((err) => console.error(err));
-  // }, []);
+    //   axios
+    //     .get(request.newTest)
+    //     .then((res) => {
+    //       setNews(res.data.slice(0, 10)); // get the first 10 items
+    //     })
+    //     .catch((err) => console.error(err));
+  }, []);
   const scrollLeft = () => {
     sliderRef.current.scrollLeft -= 500;
   };
@@ -53,14 +60,14 @@ const FeaturedTV = () => {
           ref={sliderRef}
         >
           <div className="flex   gap-5 flex-row justify-start items-center ">
-            {/* {movies.map((movie) => {
-              return <MovieSliderItem key={movie.id} title={movie.username} />;
-            })} */}
+            {movies.map((movie) => {
+              return <MovieSliderItem key={movie.id} data={movie} />;
+            })}
           </div>
         </div>
         <div className="flex w-full lg:xl:2xl:md:w-2/5 h-[100px] lg:xl:md:2xl:h-[200px] pl-[1rem]  flex-col justify-center items-center lg:2xl:xl:md:items-start">
           <div className="text-2xl ">
-            Featured TV Episode <br></br> Premieres
+            On The Air Episodes <br></br> Premieres
           </div>
           <div className="flex flex-row justify-start items-center gap-4">
             <button onClick={scrollLeft}>
@@ -81,7 +88,7 @@ const FeaturedTV = () => {
               <div>TV Series</div>
             </div>
           </div>
-          {/* {tops.map((top, index) => {
+          {movies.slice(0, 10).map((top, index) => {
             return (
               <div
                 key={index}
@@ -89,10 +96,10 @@ const FeaturedTV = () => {
                   index === tops.length - 1 ? "last-item" : ""
                 }`}
               >
-                <TopList list={top.id} />
+                <TopList list={top} />
               </div>
             );
-          })} */}
+          })}
         </div>
         <div className="flex flex-col  mr-[100px] justify-center items-start">
           <div className="flex h-[88px] flex-row justify-between w-full items-center">
@@ -104,22 +111,26 @@ const FeaturedTV = () => {
             </div>
           </div>
           <div>
-            {/* {news.map((news) => {
+            {movies.map((news) => {
               return (
                 <div>
-                  {news.id === 1 ? (
+                  {news?.id === 1 ? (
                     <div className="text-white gap-5 py-[30px] w-[300px]   lg:xl:2xl:md:w-[780px]   flex lg:xl:2xl:md:flex-row flex-col justify-start items-start lg:xl:2xl:md:items-center">
                       <div className="lg:xl:2xl:md:w-[180px] lg:xl:2xl:md:h-[250px] w-[280px] h-[400px] bg-[#1c212e]"></div>
                       <div className="flex flex-col justify-start items-start h-full gap-3">
-                        <div>year</div>
+                        <div>
+                          {new Date(news?.first_air_date).getFullYear()}
+                        </div>
                         <div className="text-3xl font-semibold">
-                          movie title
+                          {news?.name}
                         </div>
                         <div>description</div>
                         <div className="lg:xl:2xl:md:flex hidden flex-row justify-center items-center gap-3">
                           <button
                             onClick={() => {
-                              window.location.assign("movie-detail/1");
+                              window.location.assign(
+                                `movie-detail/${news?.id}`
+                              );
                             }}
                             className="flex  flex-row rounded-lg bg-[#24baef] w-[123px] h-[45px] justify-center items-center "
                           >
@@ -136,10 +147,10 @@ const FeaturedTV = () => {
                   )}
                 </div>
               );
-            })} */}
+            })}
           </div>
           <div className=" grid lg:xl:2xl:md:grid-cols-2 sm:grid-cols-1  grid-rows-5 gap-4  ">
-            {/* {news.map((news, index) => {
+            {movies.map((news, index) => {
               return (
                 <div
                   key={index}
@@ -147,10 +158,10 @@ const FeaturedTV = () => {
                     index === news.length - 1 ? "last-item" : ""
                   } ${index === 8 || index === 9 ? "no-border" : ""}`}
                 >
-                  <NewMove />
+                  <NewMove data={news} />
                 </div>
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>
