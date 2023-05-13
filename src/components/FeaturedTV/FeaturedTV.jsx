@@ -19,7 +19,7 @@ const FeaturedTV = () => {
   useEffect(() => {
     fetchWithAxios(OnTheAirAPI)
       .then((res) => {
-        console.log(res.data.results);
+        // console.log(res.data.results);
         setMovies(res.data.results);
       })
       .catch((error) => console.log(error));
