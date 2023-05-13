@@ -4,18 +4,35 @@ import { Modal, Group, Button } from "@mantine/core";
 import { FaPlay } from "react-icons/fa";
 import ReactPlayer from "react-player";
 import { fetchWithAxios, imgUrl } from "../../services/apiservices.js";
-import { Movie_Detail_API } from "../../services/Constant.js";
+import {
+  Movie_Detail_API,
+  Movies_Detail_Videos_API,
+} from "../../services/Constant.js";
 
 const RandomMovie = () => {
   const [data, setData] = useState({});
+  const [movie, setMovie] = useState({});
+  const video = () => {
+    fetchWithAxios(Movies_Detail_Videos_API(502356))
+      .then((res) => {
+        // console.log(res?.data?.results[0]);
+        setMovie(res?.data?.results[0]);
+      })
+      .catch((err) => console.log(err));
+  };
 
-  useEffect(() => {
+  const dataDetail = () => {
     fetchWithAxios(Movie_Detail_API(502356))
       .then((res) => {
         // console.log(res.data);
         setData(res.data);
       })
       .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    dataDetail();
+    video();
   }, []);
 
   const [opened, { open, close }] = useDisclosure(false);
@@ -72,7 +89,7 @@ const RandomMovie = () => {
       <Modal opened={opened} onClose={close} centered title=" " size={"50%"}>
         <div className=" w-full p-5  pt-0 ">
           <ReactPlayer
-            url={"https://www.youtube.com/watch?v=oBqqI6NMeaM"}
+            url={`https://www.youtube.com/watch?v=${movie?.key}`}
             controls={true}
             width={"100%"}
             height={"50vh"}
