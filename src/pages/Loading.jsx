@@ -14,6 +14,7 @@ function Loading() {
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#fff",
+        zIndex: 100,
       }}
     >
       <img
